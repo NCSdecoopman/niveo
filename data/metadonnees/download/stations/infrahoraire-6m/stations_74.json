@@ -1,0 +1,392 @@
+[
+  {
+    "id": "74014002",
+    "nom": "LES CARROZ",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.644,
+    "lat": 46.024667,
+    "alt": 1151,
+    "postePublic": true
+  },
+  {
+    "id": "74014004",
+    "nom": "FLAINE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.697167,
+    "lat": 46.002833,
+    "alt": 1611,
+    "postePublic": true
+  },
+  {
+    "id": "74024001",
+    "nom": "AYZE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.431333,
+    "lat": 46.0795,
+    "alt": 449,
+    "postePublic": true
+  },
+  {
+    "id": "74031001",
+    "nom": "BEAUMONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.105667,
+    "lat": 46.093,
+    "alt": 690,
+    "postePublic": true
+  },
+  {
+    "id": "74035001",
+    "nom": "BLOYE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.944667,
+    "lat": 45.821667,
+    "alt": 375,
+    "postePublic": true
+  },
+  {
+    "id": "74042003",
+    "nom": "BONNEVILLE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.399833,
+    "lat": 46.0685,
+    "alt": 453,
+    "postePublic": true
+  },
+  {
+    "id": "74043001",
+    "nom": "BONS CHABLAIS",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.338333,
+    "lat": 46.263333,
+    "alt": 575,
+    "postePublic": true
+  },
+  {
+    "id": "74045001",
+    "nom": "LE BOUCHET_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.367667,
+    "lat": 45.7995,
+    "alt": 925,
+    "postePublic": true
+  },
+  {
+    "id": "74051002",
+    "nom": "CERCIER",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.0435,
+    "lat": 46.031833,
+    "alt": 492,
+    "postePublic": true
+  },
+  {
+    "id": "74056001",
+    "nom": "CHAMONIX",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.8775,
+    "lat": 45.9295,
+    "alt": 1042,
+    "postePublic": true
+  },
+  {
+    "id": "74056005",
+    "nom": "LE TOUR",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.9485,
+    "lat": 46.003833,
+    "alt": 1500,
+    "postePublic": true
+  },
+  {
+    "id": "74060001",
+    "nom": "CHAPELLE SAINT-MAURICE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.152167,
+    "lat": 45.782333,
+    "alt": 970,
+    "postePublic": true
+  },
+  {
+    "id": "74063002",
+    "nom": "CHATEL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.818833,
+    "lat": 46.255833,
+    "alt": 1155,
+    "postePublic": true
+  },
+  {
+    "id": "74083002",
+    "nom": "COMBLOUX",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.626667,
+    "lat": 45.892833,
+    "alt": 1183,
+    "postePublic": true
+  },
+  {
+    "id": "74087001",
+    "nom": "CONTAMINE-SUR- ARVE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.34,
+    "lat": 46.128667,
+    "alt": 452,
+    "postePublic": true
+  },
+  {
+    "id": "74093001",
+    "nom": "CRAN-GEVRIER",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.107833,
+    "lat": 45.910833,
+    "alt": 426,
+    "postePublic": true
+  },
+  {
+    "id": "74105002",
+    "nom": "DOUVAINE SA",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.318333,
+    "lat": 46.302333,
+    "alt": 470,
+    "postePublic": true
+  },
+  {
+    "id": "74116002",
+    "nom": "ETEAUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.275667,
+    "lat": 46.063,
+    "alt": 805,
+    "postePublic": true
+  },
+  {
+    "id": "74119002",
+    "nom": "EVIAN",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.5665,
+    "lat": 46.3965,
+    "alt": 395,
+    "postePublic": true
+  },
+  {
+    "id": "74119003",
+    "nom": "EVIAN SA",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.5825,
+    "lat": 46.382333,
+    "alt": 725,
+    "postePublic": true
+  },
+  {
+    "id": "74133001",
+    "nom": "GAILLARD",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.210333,
+    "lat": 46.176,
+    "alt": 399,
+    "postePublic": true
+  },
+  {
+    "id": "74135001",
+    "nom": "GIEZ",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.255333,
+    "lat": 45.762667,
+    "alt": 478,
+    "postePublic": true
+  },
+  {
+    "id": "74136005",
+    "nom": "LE GRAND-BORNAND",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.471833,
+    "lat": 45.973333,
+    "alt": 1430,
+    "postePublic": true
+  },
+  {
+    "id": "74137001",
+    "nom": "GROISY_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.1745,
+    "lat": 46.012667,
+    "alt": 670,
+    "postePublic": true
+  },
+  {
+    "id": "74143003",
+    "nom": "HOUCHES (LES)",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.800667,
+    "lat": 45.8925,
+    "alt": 1004,
+    "postePublic": true
+  },
+  {
+    "id": "74182001",
+    "nom": "MEYTHET",
+    "posteOuvert": true,
+    "typePoste": 0,
+    "lon": 6.094,
+    "lat": 45.928167,
+    "alt": 455,
+    "postePublic": true
+  },
+  {
+    "id": "74191003",
+    "nom": "LE PLENEY",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.692833,
+    "lat": 46.168333,
+    "alt": 1515,
+    "postePublic": true
+  },
+  {
+    "id": "74203001",
+    "nom": "NOVEL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.79,
+    "lat": 46.368833,
+    "alt": 949,
+    "postePublic": true
+  },
+  {
+    "id": "74211002",
+    "nom": "PERS JUSSY",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.2605,
+    "lat": 46.098,
+    "alt": 747,
+    "postePublic": true
+  },
+  {
+    "id": "74221001",
+    "nom": "REPOSOIR (LE)",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.5355,
+    "lat": 46.011333,
+    "alt": 975,
+    "postePublic": true
+  },
+  {
+    "id": "74252001",
+    "nom": "ST SIGISMOND",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.612167,
+    "lat": 46.076333,
+    "alt": 1020,
+    "postePublic": true
+  },
+  {
+    "id": "74256001",
+    "nom": "SALLANCHES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.640333,
+    "lat": 45.931667,
+    "alt": 542,
+    "postePublic": true
+  },
+  {
+    "id": "74258002",
+    "nom": "SAMOENS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.726667,
+    "lat": 46.086667,
+    "alt": 785,
+    "postePublic": true
+  },
+  {
+    "id": "74266001",
+    "nom": "SERVOZ",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.767333,
+    "lat": 45.931167,
+    "alt": 815,
+    "postePublic": true
+  },
+  {
+    "id": "74281001",
+    "nom": "THONON-INRAE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.455,
+    "lat": 46.366667,
+    "alt": 376,
+    "postePublic": true
+  },
+  {
+    "id": "74285002",
+    "nom": "USINENS SA",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.8445,
+    "lat": 46.013,
+    "alt": 452,
+    "postePublic": true
+  },
+  {
+    "id": "74286001",
+    "nom": "VACHERESSE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.669833,
+    "lat": 46.316333,
+    "alt": 790,
+    "postePublic": true
+  },
+  {
+    "id": "74290003",
+    "nom": "VALLORCINE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.919167,
+    "lat": 46.0205,
+    "alt": 1326,
+    "postePublic": true
+  },
+  {
+    "id": "74292001",
+    "nom": "VAULX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.994667,
+    "lat": 45.918,
+    "alt": 520,
+    "postePublic": true
+  }
+]

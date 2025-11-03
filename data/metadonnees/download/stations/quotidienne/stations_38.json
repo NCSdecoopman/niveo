@@ -1,0 +1,2552 @@
+[
+  {
+    "id": "38002400",
+    "nom": "Prapoutel Pipay",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.98,
+    "lat": 45.25,
+    "alt": 1345,
+    "postePublic": true
+  },
+  {
+    "id": "38002401",
+    "nom": "Prapoutel -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.039833,
+    "lat": 45.253333,
+    "alt": 1900,
+    "postePublic": true
+  },
+  {
+    "id": "38002403",
+    "nom": "La Jasse Prapoutel",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.97,
+    "lat": 45.3,
+    "alt": 2000,
+    "postePublic": true
+  },
+  {
+    "id": "38002404",
+    "nom": "Prapoutel",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.017167,
+    "lat": 45.243333,
+    "alt": 1870,
+    "postePublic": true
+  },
+  {
+    "id": "38002405",
+    "nom": "Prapoutel",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.016667,
+    "lat": 45.245833,
+    "alt": 1570,
+    "postePublic": true
+  },
+  {
+    "id": "38002406",
+    "nom": "PRAPOUTEL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.995667,
+    "lat": 45.256167,
+    "alt": 1355,
+    "postePublic": true
+  },
+  {
+    "id": "38002408",
+    "nom": "PRAPOUTEL",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.016333,
+    "lat": 45.253833,
+    "alt": 1595,
+    "postePublic": true
+  },
+  {
+    "id": "38005001",
+    "nom": "ALLEMOND",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.040333,
+    "lat": 45.203333,
+    "alt": 1270,
+    "postePublic": true
+  },
+  {
+    "id": "38005002",
+    "nom": "ALLEMOND BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.036667,
+    "lat": 45.13,
+    "alt": 722,
+    "postePublic": true
+  },
+  {
+    "id": "38005400",
+    "nom": "Le Rivier d Allemond",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.0425,
+    "lat": 45.205833,
+    "alt": 1280,
+    "postePublic": true
+  },
+  {
+    "id": "38005402",
+    "nom": "AIGLETON-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.038167,
+    "lat": 45.231,
+    "alt": 2240,
+    "postePublic": true
+  },
+  {
+    "id": "38006001",
+    "nom": "ALLEVARD",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.072,
+    "lat": 45.395,
+    "alt": 495,
+    "postePublic": true
+  },
+  {
+    "id": "38006400",
+    "nom": "Le Collet d Allevard",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.123833,
+    "lat": 45.3895,
+    "alt": 1642,
+    "postePublic": true
+  },
+  {
+    "id": "38006401",
+    "nom": "Le Collet d Allevard -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.142333,
+    "lat": 45.387,
+    "alt": 2000,
+    "postePublic": true
+  },
+  {
+    "id": "38006402",
+    "nom": "Le Collet d Allevard",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.1,
+    "lat": 45.38,
+    "alt": 1650,
+    "postePublic": true
+  },
+  {
+    "id": "38016001",
+    "nom": "ARZAY BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.17,
+    "lat": 45.425,
+    "alt": 419,
+    "postePublic": true
+  },
+  {
+    "id": "38020001",
+    "nom": "AURIS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.066667,
+    "lat": 45.031667,
+    "alt": 730,
+    "postePublic": true
+  },
+  {
+    "id": "38020400",
+    "nom": "AURIS-EN-OISANS",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.076333,
+    "lat": 45.057167,
+    "alt": 1600,
+    "postePublic": true
+  },
+  {
+    "id": "38020401",
+    "nom": "Auris en Oisans -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.082167,
+    "lat": 45.076167,
+    "alt": 1860,
+    "postePublic": true
+  },
+  {
+    "id": "38021001",
+    "nom": "AUTRANS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.552167,
+    "lat": 45.182,
+    "alt": 1069,
+    "postePublic": true
+  },
+  {
+    "id": "38021400",
+    "nom": "AUTRANS-NIVO",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.581167,
+    "lat": 45.227167,
+    "alt": 1260,
+    "postePublic": true
+  },
+  {
+    "id": "38034001",
+    "nom": "BEAUREPAIRE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.0365,
+    "lat": 45.350333,
+    "alt": 288,
+    "postePublic": true
+  },
+  {
+    "id": "38040001",
+    "nom": "BESSE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.168,
+    "lat": 45.071167,
+    "alt": 1520,
+    "postePublic": true
+  },
+  {
+    "id": "38046002",
+    "nom": "COL DE ROSSATIERE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.401,
+    "lat": 45.4555,
+    "alt": 568,
+    "postePublic": true
+  },
+  {
+    "id": "38052002",
+    "nom": "LE BOURG-D'OISANS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.028333,
+    "lat": 45.053333,
+    "alt": 768,
+    "postePublic": true
+  },
+  {
+    "id": "38052400",
+    "nom": "Bourg d Oisans",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.040833,
+    "lat": 45.056667,
+    "alt": 720,
+    "postePublic": true
+  },
+  {
+    "id": "38053001",
+    "nom": "BOURGOIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.265,
+    "lat": 45.605,
+    "alt": 254,
+    "postePublic": true
+  },
+  {
+    "id": "38053003",
+    "nom": "BOURGOIN",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.309333,
+    "lat": 45.608,
+    "alt": 358,
+    "postePublic": true
+  },
+  {
+    "id": "38064001",
+    "nom": "CESSIEU",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.404167,
+    "lat": 45.5635,
+    "alt": 304,
+    "postePublic": true
+  },
+  {
+    "id": "38073001",
+    "nom": "CHANTELOUVE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.956667,
+    "lat": 44.97,
+    "alt": 1000,
+    "postePublic": true
+  },
+  {
+    "id": "38075001",
+    "nom": "CHAPAREILLAN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.985,
+    "lat": 45.463333,
+    "alt": 270,
+    "postePublic": true
+  },
+  {
+    "id": "38075002",
+    "nom": "CHAPAREILLAN BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.99,
+    "lat": 45.465,
+    "alt": 275,
+    "postePublic": true
+  },
+  {
+    "id": "38082001",
+    "nom": "CHARAVINES",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.517333,
+    "lat": 45.432833,
+    "alt": 510,
+    "postePublic": true
+  },
+  {
+    "id": "38087001",
+    "nom": "CHASSE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.798333,
+    "lat": 45.581667,
+    "alt": 222,
+    "postePublic": true
+  },
+  {
+    "id": "38090001",
+    "nom": "CHATEAU-BERNARD",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.571667,
+    "lat": 44.975,
+    "alt": 800,
+    "postePublic": true
+  },
+  {
+    "id": "38090400",
+    "nom": "Col de l Arzelier",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.594167,
+    "lat": 44.989833,
+    "alt": 1156,
+    "postePublic": true
+  },
+  {
+    "id": "38092001",
+    "nom": "CHATELUS BOURNILLON",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.373333,
+    "lat": 45.056667,
+    "alt": 309,
+    "postePublic": true
+  },
+  {
+    "id": "38095001",
+    "nom": "CHATTE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.306,
+    "lat": 45.140167,
+    "alt": 272,
+    "postePublic": true
+  },
+  {
+    "id": "38100001",
+    "nom": "LE CHEYLAS BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.993333,
+    "lat": 45.371667,
+    "alt": 244,
+    "postePublic": true
+  },
+  {
+    "id": "38103001",
+    "nom": "CHICHILIANNE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.571,
+    "lat": 44.812,
+    "alt": 1010,
+    "postePublic": true
+  },
+  {
+    "id": "38103002",
+    "nom": "CHICHILIANNE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.580333,
+    "lat": 44.810333,
+    "alt": 984,
+    "postePublic": true
+  },
+  {
+    "id": "38105001",
+    "nom": "CHIRENS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.57,
+    "lat": 45.433333,
+    "alt": 463,
+    "postePublic": true
+  },
+  {
+    "id": "38113001",
+    "nom": "CLELLES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.616833,
+    "lat": 44.825333,
+    "alt": 815,
+    "postePublic": true
+  },
+  {
+    "id": "38113003",
+    "nom": "CLELLES LE PERCY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.621667,
+    "lat": 44.826667,
+    "alt": 800,
+    "postePublic": true
+  },
+  {
+    "id": "38113005",
+    "nom": "CLELLES BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.621667,
+    "lat": 44.826667,
+    "alt": 740,
+    "postePublic": true
+  },
+  {
+    "id": "38126001",
+    "nom": "CORENC LA REVIREE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.765,
+    "lat": 45.22,
+    "alt": 227,
+    "postePublic": true
+  },
+  {
+    "id": "38128001",
+    "nom": "CORPS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.946,
+    "lat": 44.819833,
+    "alt": 935,
+    "postePublic": true
+  },
+  {
+    "id": "38128002",
+    "nom": "CORPS PONTS-ET-CHAUSSEES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.946667,
+    "lat": 44.818333,
+    "alt": 930,
+    "postePublic": true
+  },
+  {
+    "id": "38130001",
+    "nom": "LA COTE ST ANDRE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.262667,
+    "lat": 45.3545,
+    "alt": 346,
+    "postePublic": true
+  },
+  {
+    "id": "38133001",
+    "nom": "COUBLEVIE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.596333,
+    "lat": 45.355333,
+    "alt": 300,
+    "postePublic": true
+  },
+  {
+    "id": "38135001",
+    "nom": "COURTENAY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.376667,
+    "lat": 45.778333,
+    "alt": 280,
+    "postePublic": true
+  },
+  {
+    "id": "38135002",
+    "nom": "COURTENAY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.388333,
+    "lat": 45.738333,
+    "alt": 315,
+    "postePublic": true
+  },
+  {
+    "id": "38138001",
+    "nom": "CREMIEU AGGLOMERATION",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.253333,
+    "lat": 45.723333,
+    "alt": 236,
+    "postePublic": true
+  },
+  {
+    "id": "38153001",
+    "nom": "ENGINS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.617167,
+    "lat": 45.176167,
+    "alt": 877,
+    "postePublic": true
+  },
+  {
+    "id": "38154001",
+    "nom": "ENTRAIGUES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.946667,
+    "lat": 44.903333,
+    "alt": 809,
+    "postePublic": true
+  },
+  {
+    "id": "38157001",
+    "nom": "ESTRABLIN BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.965,
+    "lat": 45.516667,
+    "alt": 225,
+    "postePublic": true
+  },
+  {
+    "id": "38158001",
+    "nom": "GRENOBLE-EYBENS",
+    "posteOuvert": false,
+    "typePoste": 0,
+    "lon": 5.733333,
+    "lat": 45.166667,
+    "alt": 223,
+    "postePublic": true
+  },
+  {
+    "id": "38160001",
+    "nom": "EYZIN-PINET",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.0,
+    "lat": 45.473333,
+    "alt": 310,
+    "postePublic": true
+  },
+  {
+    "id": "38162001",
+    "nom": "FAVERGES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.528833,
+    "lat": 45.594667,
+    "alt": 367,
+    "postePublic": true
+  },
+  {
+    "id": "38163001",
+    "nom": "FOND-DE-FRANCE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.075,
+    "lat": 45.28,
+    "alt": 1081,
+    "postePublic": true
+  },
+  {
+    "id": "38163002",
+    "nom": "LA-FERRIERE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.087667,
+    "lat": 45.319333,
+    "alt": 930,
+    "postePublic": true
+  },
+  {
+    "id": "38163003",
+    "nom": "LA FERRIERE USINE RIONDET",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.086667,
+    "lat": 45.318333,
+    "alt": 815,
+    "postePublic": true
+  },
+  {
+    "id": "38163004",
+    "nom": "LA FERRIERE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.086667,
+    "lat": 45.318333,
+    "alt": 2141,
+    "postePublic": true
+  },
+  {
+    "id": "38170001",
+    "nom": "FONTANIL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.661833,
+    "lat": 45.255667,
+    "alt": 200,
+    "postePublic": true
+  },
+  {
+    "id": "38177001",
+    "nom": "LA GARDE L'ARMENTIER LE BAS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.045,
+    "lat": 45.066667,
+    "alt": 1080,
+    "postePublic": true
+  },
+  {
+    "id": "38177003",
+    "nom": "LA GARDE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.045,
+    "lat": 45.066667,
+    "alt": 1087,
+    "postePublic": true
+  },
+  {
+    "id": "38185001",
+    "nom": "GRENOBLE ECOLE NORMALE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.721667,
+    "lat": 45.185,
+    "alt": 217,
+    "postePublic": true
+  },
+  {
+    "id": "38185002",
+    "nom": "GRENOBLE JARDIN DES PLANTES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.721667,
+    "lat": 45.185,
+    "alt": 220,
+    "postePublic": true
+  },
+  {
+    "id": "38185009",
+    "nom": "GRENOBLE BERRYAS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.723333,
+    "lat": 45.185,
+    "alt": 215,
+    "postePublic": true
+  },
+  {
+    "id": "38185010",
+    "nom": "GRENOBLE FACULTE DES SCIENCES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.723333,
+    "lat": 45.185,
+    "alt": 215,
+    "postePublic": true
+  },
+  {
+    "id": "38185012",
+    "nom": "GRENOBLE-CEA-RADOME",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.682833,
+    "lat": 45.2115,
+    "alt": 213,
+    "postePublic": true
+  },
+  {
+    "id": "38185400",
+    "nom": "Enq. aval Grenoble -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.771667,
+    "lat": 45.198833,
+    "alt": 212,
+    "postePublic": true
+  },
+  {
+    "id": "38185401",
+    "nom": "Occasionnel Grenoble -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.771667,
+    "lat": 45.198833,
+    "alt": 212,
+    "postePublic": true
+  },
+  {
+    "id": "38186001",
+    "nom": "GRESSE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.565667,
+    "lat": 44.899833,
+    "alt": 1220,
+    "postePublic": true
+  },
+  {
+    "id": "38186400",
+    "nom": "Gresse en Vercors",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.547167,
+    "lat": 44.893167,
+    "alt": 1254,
+    "postePublic": true
+  },
+  {
+    "id": "38186401",
+    "nom": "Gresse en Vercors -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.5275,
+    "lat": 44.897333,
+    "alt": 1650,
+    "postePublic": true
+  },
+  {
+    "id": "38187400",
+    "nom": "LE GUA-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 5.588667,
+    "lat": 45.015,
+    "alt": 1646,
+    "postePublic": true
+  },
+  {
+    "id": "38191001",
+    "nom": "HUEZ",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.051667,
+    "lat": 45.08,
+    "alt": 1750,
+    "postePublic": true
+  },
+  {
+    "id": "38191002",
+    "nom": "ALPE-D'HUEZ",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.085667,
+    "lat": 45.087833,
+    "alt": 1860,
+    "postePublic": true
+  },
+  {
+    "id": "38191400",
+    "nom": "L Alpe d Huez (SATA)",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.072833,
+    "lat": 45.097667,
+    "alt": 1860,
+    "postePublic": true
+  },
+  {
+    "id": "38191401",
+    "nom": "L Alpe d Huez (SATA) -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.069333,
+    "lat": 45.110833,
+    "alt": 2000,
+    "postePublic": true
+  },
+  {
+    "id": "38191402",
+    "nom": "L Alpe d Huez 2700",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.1,
+    "lat": 45.1,
+    "alt": 2700,
+    "postePublic": true
+  },
+  {
+    "id": "38191405",
+    "nom": "Col du Lac Blanc -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.111667,
+    "lat": 45.127667,
+    "alt": 2700,
+    "postePublic": true
+  },
+  {
+    "id": "38191407",
+    "nom": "L Alpe d Huez SATA 1860",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.05,
+    "lat": 45.08,
+    "alt": 1850,
+    "postePublic": true
+  },
+  {
+    "id": "38191408",
+    "nom": "L Alpe d Huez 2350",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.0975,
+    "lat": 45.105,
+    "alt": 2340,
+    "postePublic": true
+  },
+  {
+    "id": "38191409",
+    "nom": "L Alpe d Huez 2350 -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.0975,
+    "lat": 45.105,
+    "alt": 2340,
+    "postePublic": true
+  },
+  {
+    "id": "38204001",
+    "nom": "LALLEY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.675,
+    "lat": 44.756667,
+    "alt": 850,
+    "postePublic": true
+  },
+  {
+    "id": "38204002",
+    "nom": "LALLEY AVERS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.673333,
+    "lat": 44.758333,
+    "alt": 820,
+    "postePublic": true
+  },
+  {
+    "id": "38205400",
+    "nom": "Lans en Vercors",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.609167,
+    "lat": 45.1115,
+    "alt": 1400,
+    "postePublic": true
+  },
+  {
+    "id": "38207001",
+    "nom": "LAVALDENS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.883333,
+    "lat": 44.990667,
+    "alt": 1070,
+    "postePublic": true
+  },
+  {
+    "id": "38210001",
+    "nom": "LEYRIEU BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.255,
+    "lat": 45.756667,
+    "alt": 210,
+    "postePublic": true
+  },
+  {
+    "id": "38215001",
+    "nom": "LUZINAY BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.955,
+    "lat": 45.59,
+    "alt": 185,
+    "postePublic": true
+  },
+  {
+    "id": "38215002",
+    "nom": "LUZINAY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.972167,
+    "lat": 45.590667,
+    "alt": 310,
+    "postePublic": true
+  },
+  {
+    "id": "38226002",
+    "nom": "MENS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.754667,
+    "lat": 44.815833,
+    "alt": 780,
+    "postePublic": true
+  },
+  {
+    "id": "38229001",
+    "nom": "MEYLAN",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 5.778333,
+    "lat": 45.228833,
+    "alt": 469,
+    "postePublic": true
+  },
+  {
+    "id": "38238001",
+    "nom": "MOIDIEU-DETOURBE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.04,
+    "lat": 45.495,
+    "alt": 262,
+    "postePublic": true
+  },
+  {
+    "id": "38239002",
+    "nom": "MOIRANS BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.566667,
+    "lat": 45.326667,
+    "alt": 195,
+    "postePublic": true
+  },
+  {
+    "id": "38242001",
+    "nom": "MONESTIER",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.6375,
+    "lat": 44.921667,
+    "alt": 806,
+    "postePublic": true
+  },
+  {
+    "id": "38242002",
+    "nom": "MONESTIER-DE-CLERMONT BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.633333,
+    "lat": 44.918333,
+    "alt": 840,
+    "postePublic": true
+  },
+  {
+    "id": "38247001",
+    "nom": "MONTALIEU-VERCIEU LE MARAIS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.403333,
+    "lat": 45.815,
+    "alt": 222,
+    "postePublic": true
+  },
+  {
+    "id": "38248002",
+    "nom": "MONTAUD",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.56,
+    "lat": 45.263333,
+    "alt": 740,
+    "postePublic": true
+  },
+  {
+    "id": "38253001",
+    "nom": "MONT-DE-LANS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.13,
+    "lat": 45.036667,
+    "alt": 1050,
+    "postePublic": true
+  },
+  {
+    "id": "38253002",
+    "nom": "LES DEUX-ALPES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.126667,
+    "lat": 45.018333,
+    "alt": 1670,
+    "postePublic": true
+  },
+  {
+    "id": "38253400",
+    "nom": "Les 2 Alpes (Toura NE)",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.171833,
+    "lat": 44.996667,
+    "alt": 2550,
+    "postePublic": true
+  },
+  {
+    "id": "38253401",
+    "nom": "Les 2 Alpes (Toura NE) -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.171833,
+    "lat": 44.996667,
+    "alt": 2600,
+    "postePublic": true
+  },
+  {
+    "id": "38253403",
+    "nom": "Les 2 Alpes (Pied Mouttet)",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.106667,
+    "lat": 45.009167,
+    "alt": 2084,
+    "postePublic": true
+  },
+  {
+    "id": "38253404",
+    "nom": "Les 2 Alpes (GN)",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.122833,
+    "lat": 45.007333,
+    "alt": 1630,
+    "postePublic": true
+  },
+  {
+    "id": "38253405",
+    "nom": "Les 2 Alpes (Pied Mouttet) -S-",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.105833,
+    "lat": 45.008833,
+    "alt": 2050,
+    "postePublic": true
+  },
+  {
+    "id": "38253407",
+    "nom": "Les 2 ALpes Jandri",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.204667,
+    "lat": 44.997,
+    "alt": 3200,
+    "postePublic": true
+  },
+  {
+    "id": "38261001",
+    "nom": "MORESTEL BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.468333,
+    "lat": 45.676667,
+    "alt": 210,
+    "postePublic": true
+  },
+  {
+    "id": "38264400",
+    "nom": "L Alpe du Grand Serre",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.8625,
+    "lat": 45.020833,
+    "alt": 1382,
+    "postePublic": true
+  },
+  {
+    "id": "38264401",
+    "nom": "L Alpe du Grand Serre -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.855,
+    "lat": 44.998667,
+    "alt": 1800,
+    "postePublic": true
+  },
+  {
+    "id": "38265001",
+    "nom": "LA MOTTE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.746667,
+    "lat": 44.963333,
+    "alt": 937,
+    "postePublic": true
+  },
+  {
+    "id": "38269001",
+    "nom": "LA MURE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.783667,
+    "lat": 44.905667,
+    "alt": 881,
+    "postePublic": true
+  },
+  {
+    "id": "38269003",
+    "nom": "LA MURE PONTS-ET-CHAUSSEES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.786667,
+    "lat": 44.905,
+    "alt": 873,
+    "postePublic": true
+  },
+  {
+    "id": "38269004",
+    "nom": "LA MURE- RADOME",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.786167,
+    "lat": 44.935,
+    "alt": 885,
+    "postePublic": true
+  },
+  {
+    "id": "38275001",
+    "nom": "SERRE-NERPOL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.352833,
+    "lat": 45.284167,
+    "alt": 630,
+    "postePublic": true
+  },
+  {
+    "id": "38275002",
+    "nom": "SERRE-NERPOL_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.353,
+    "lat": 45.2845,
+    "alt": 632,
+    "postePublic": true
+  },
+  {
+    "id": "38285001",
+    "nom": "ORNON",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.987333,
+    "lat": 45.051667,
+    "alt": 950,
+    "postePublic": true
+  },
+  {
+    "id": "38289401",
+    "nom": "Olmet",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.071667,
+    "lat": 45.128167,
+    "alt": 1350,
+    "postePublic": true
+  },
+  {
+    "id": "38294001",
+    "nom": "PANOSSAS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.203667,
+    "lat": 45.668667,
+    "alt": 250,
+    "postePublic": true
+  },
+  {
+    "id": "38299001",
+    "nom": "PELLAFOL-CHANEAUX",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.906167,
+    "lat": 44.784167,
+    "alt": 947,
+    "postePublic": true
+  },
+  {
+    "id": "38299002",
+    "nom": "PELLAFOL-SAUTET",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.908833,
+    "lat": 44.816333,
+    "alt": 800,
+    "postePublic": true
+  },
+  {
+    "id": "38301001",
+    "nom": "PERCY BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.648333,
+    "lat": 44.8,
+    "alt": 846,
+    "postePublic": true
+  },
+  {
+    "id": "38304001",
+    "nom": "PIERRE-CHATEL BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.775,
+    "lat": 44.955,
+    "alt": 33,
+    "postePublic": true
+  },
+  {
+    "id": "38305001",
+    "nom": "LE PIN ECOLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.505,
+    "lat": 45.456667,
+    "alt": 530,
+    "postePublic": true
+  },
+  {
+    "id": "38311001",
+    "nom": "POMMIER-DE-BEAUREPAIRE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.126667,
+    "lat": 45.408333,
+    "alt": 480,
+    "postePublic": true
+  },
+  {
+    "id": "38315001",
+    "nom": "PONT-DE-BEAUVOISIN-TABACS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.67,
+    "lat": 45.533333,
+    "alt": 239,
+    "postePublic": true
+  },
+  {
+    "id": "38315002",
+    "nom": "PONT-DE-BEAUVOISIN",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.671333,
+    "lat": 45.528333,
+    "alt": 284,
+    "postePublic": true
+  },
+  {
+    "id": "38316001",
+    "nom": "PONT-DE-CHERUY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.1725,
+    "lat": 45.7495,
+    "alt": 202,
+    "postePublic": true
+  },
+  {
+    "id": "38317001",
+    "nom": "LE PONT-DE-CLAIX ROCHEFORT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.698333,
+    "lat": 45.128333,
+    "alt": 250,
+    "postePublic": true
+  },
+  {
+    "id": "38319001",
+    "nom": "PONT-EN-ROYANS BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.341667,
+    "lat": 45.061667,
+    "alt": 200,
+    "postePublic": true
+  },
+  {
+    "id": "38319002",
+    "nom": "PONT-EN-ROYANS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.341667,
+    "lat": 45.061667,
+    "alt": 200,
+    "postePublic": true
+  },
+  {
+    "id": "38325001",
+    "nom": "PROVEYSIEUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.706667,
+    "lat": 45.275,
+    "alt": 600,
+    "postePublic": true
+  },
+  {
+    "id": "38333001",
+    "nom": "RENCUREL-BALME",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.466667,
+    "lat": 45.086667,
+    "alt": 670,
+    "postePublic": true
+  },
+  {
+    "id": "38333002",
+    "nom": "RENCUREL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.475,
+    "lat": 45.103333,
+    "alt": 800,
+    "postePublic": true
+  },
+  {
+    "id": "38333003",
+    "nom": "RENCUREL",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.474333,
+    "lat": 45.113333,
+    "alt": 885,
+    "postePublic": true
+  },
+  {
+    "id": "38334001",
+    "nom": "REVEL",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.869167,
+    "lat": 45.185,
+    "alt": 645,
+    "postePublic": true
+  },
+  {
+    "id": "38334400",
+    "nom": "REFUGE DE LA PRA",
+    "posteOuvert": true,
+    "typePoste": 5,
+    "lon": 5.944833,
+    "lat": 45.161167,
+    "alt": 2108,
+    "postePublic": true
+  },
+  {
+    "id": "38336001",
+    "nom": "REVENTIN",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 4.810667,
+    "lat": 45.478667,
+    "alt": 295,
+    "postePublic": true
+  },
+  {
+    "id": "38340001",
+    "nom": "LES ROCHES-DE-CONDRIEU SEAV",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.766667,
+    "lat": 45.453333,
+    "alt": 350,
+    "postePublic": true
+  },
+  {
+    "id": "38342001",
+    "nom": "ROISSARD",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.6395,
+    "lat": 44.882167,
+    "alt": 746,
+    "postePublic": true
+  },
+  {
+    "id": "38347001",
+    "nom": "ROYBON",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.251667,
+    "lat": 45.218333,
+    "alt": 640,
+    "postePublic": true
+  },
+  {
+    "id": "38347002",
+    "nom": "ROYBON AGGLOMERATION",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.245,
+    "lat": 45.26,
+    "alt": 630,
+    "postePublic": true
+  },
+  {
+    "id": "38347003",
+    "nom": "ROYBON CHAMBARAND",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.243333,
+    "lat": 45.26,
+    "alt": 600,
+    "postePublic": true
+  },
+  {
+    "id": "38349001",
+    "nom": "SABLONS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 4.768667,
+    "lat": 45.329667,
+    "alt": 136,
+    "postePublic": true
+  },
+  {
+    "id": "38362001",
+    "nom": "ST AUPRE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.657333,
+    "lat": 45.392667,
+    "alt": 450,
+    "postePublic": true
+  },
+  {
+    "id": "38366001",
+    "nom": "ST-BAUDILLE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.796167,
+    "lat": 44.796,
+    "alt": 1040,
+    "postePublic": true
+  },
+  {
+    "id": "38367001",
+    "nom": "ST-BERNARD",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.9,
+    "lat": 45.325,
+    "alt": 910,
+    "postePublic": true
+  },
+  {
+    "id": "38367002",
+    "nom": "ST-BERNARD_BG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.903333,
+    "lat": 45.33,
+    "alt": 910,
+    "postePublic": true
+  },
+  {
+    "id": "38367003",
+    "nom": "ST-BERNARD-DU-TOUVET",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.903333,
+    "lat": 45.33,
+    "alt": 890,
+    "postePublic": true
+  },
+  {
+    "id": "38375001",
+    "nom": "ST-CHRISTOPHE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.188167,
+    "lat": 44.9455,
+    "alt": 1570,
+    "postePublic": true
+  },
+  {
+    "id": "38375002",
+    "nom": "ST-CHRISTOPHE-OISANS-ECRINS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.176667,
+    "lat": 44.956667,
+    "alt": 1400,
+    "postePublic": true
+  },
+  {
+    "id": "38375003",
+    "nom": "ST-CHRISTOPHE-OISANS-ETAGES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.176667,
+    "lat": 44.956667,
+    "alt": 1600,
+    "postePublic": true
+  },
+  {
+    "id": "38375004",
+    "nom": "ST-CHRISTOPHE-OISANS-BERARDE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.176667,
+    "lat": 44.956667,
+    "alt": 1738,
+    "postePublic": true
+  },
+  {
+    "id": "38375009",
+    "nom": "ST CHRISTOPHE EN OISANS_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.188333,
+    "lat": 44.945833,
+    "alt": 1564,
+    "postePublic": true
+  },
+  {
+    "id": "38375400",
+    "nom": "St Christophe",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.188333,
+    "lat": 44.946667,
+    "alt": 1570,
+    "postePublic": true
+  },
+  {
+    "id": "38375402",
+    "nom": "LES ECRINS-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.346167,
+    "lat": 44.936833,
+    "alt": 2970,
+    "postePublic": true
+  },
+  {
+    "id": "38375403",
+    "nom": "La Berarde",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.292,
+    "lat": 44.932667,
+    "alt": 1738,
+    "postePublic": true
+  },
+  {
+    "id": "38375404",
+    "nom": "REFUGE DE LA PILATTE",
+    "posteOuvert": false,
+    "typePoste": 5,
+    "lon": 6.325833,
+    "lat": 44.868833,
+    "alt": 2574,
+    "postePublic": true
+  },
+  {
+    "id": "38375405",
+    "nom": "REFUGE DU PROMONTOIRE",
+    "posteOuvert": true,
+    "typePoste": 5,
+    "lon": 6.303167,
+    "lat": 44.998333,
+    "alt": 3060,
+    "postePublic": true
+  },
+  {
+    "id": "38375406",
+    "nom": "REFUGE DE TEMPLE ECRINS",
+    "posteOuvert": true,
+    "typePoste": 5,
+    "lon": 6.332333,
+    "lat": 44.904,
+    "alt": 2408,
+    "postePublic": true
+  },
+  {
+    "id": "38378001",
+    "nom": "SAINT-CLAIR-DU-RHONE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.775,
+    "lat": 45.44,
+    "alt": 162,
+    "postePublic": true
+  },
+  {
+    "id": "38384001",
+    "nom": "GRENOBLE-ST GEOIRS",
+    "posteOuvert": true,
+    "typePoste": 0,
+    "lon": 5.313333,
+    "lat": 45.364,
+    "alt": 384,
+    "postePublic": true
+  },
+  {
+    "id": "38386001",
+    "nom": "ST-GEOIRE-EN-VALDAINE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.653333,
+    "lat": 45.463333,
+    "alt": 380,
+    "postePublic": true
+  },
+  {
+    "id": "38390001",
+    "nom": "SAINT-GERVAIS PIERRE MOUTON",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.481667,
+    "lat": 45.201667,
+    "alt": 249,
+    "postePublic": true
+  },
+  {
+    "id": "38390002",
+    "nom": "ST-GERVAIS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.52,
+    "lat": 45.205,
+    "alt": 1020,
+    "postePublic": true
+  },
+  {
+    "id": "38395001",
+    "nom": "ST-HILAIRE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.884,
+    "lat": 45.307833,
+    "alt": 970,
+    "postePublic": true
+  },
+  {
+    "id": "38395002",
+    "nom": "SAINT-HILAIRE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.886667,
+    "lat": 45.31,
+    "alt": 1150,
+    "postePublic": true
+  },
+  {
+    "id": "38395003",
+    "nom": "ST-HILAIRE-DU-TOUVET",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.888333,
+    "lat": 45.31,
+    "alt": 920,
+    "postePublic": true
+  },
+  {
+    "id": "38395004",
+    "nom": "SAINT-HILAIRE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.884833,
+    "lat": 45.315,
+    "alt": 990,
+    "postePublic": true
+  },
+  {
+    "id": "38395400",
+    "nom": "St Hilaire",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.883333,
+    "lat": 45.308333,
+    "alt": 970,
+    "postePublic": true
+  },
+  {
+    "id": "38395403",
+    "nom": "ST HILAIRE-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 5.8635,
+    "lat": 45.313833,
+    "alt": 1756,
+    "postePublic": true
+  },
+  {
+    "id": "38399001",
+    "nom": "ST-JEAN-DE-BOURNAY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.14,
+    "lat": 45.5,
+    "alt": 369,
+    "postePublic": true
+  },
+  {
+    "id": "38401001",
+    "nom": "ST-JEAN-DE-SOUDAIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.433333,
+    "lat": 45.565,
+    "alt": 307,
+    "postePublic": true
+  },
+  {
+    "id": "38407001",
+    "nom": "SAINT-JULIEN-DE-RAZ BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.663333,
+    "lat": 45.35,
+    "alt": 680,
+    "postePublic": true
+  },
+  {
+    "id": "38412001",
+    "nom": "ST-LAURENT-DU-PONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.739833,
+    "lat": 45.4145,
+    "alt": 389,
+    "postePublic": true
+  },
+  {
+    "id": "38412002",
+    "nom": "SAINT LAURENT DU PONT AUTO",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 5.718,
+    "lat": 45.3875,
+    "alt": 380,
+    "postePublic": true
+  },
+  {
+    "id": "38416001",
+    "nom": "ST-MARCELLIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.323333,
+    "lat": 45.148333,
+    "alt": 281,
+    "postePublic": true
+  },
+  {
+    "id": "38416002",
+    "nom": "SAINT-MARCELLIN BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.32,
+    "lat": 45.155,
+    "alt": 281,
+    "postePublic": true
+  },
+  {
+    "id": "38421002",
+    "nom": "ST-M-D'HERES-GALOCHERE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.768833,
+    "lat": 45.169167,
+    "alt": 220,
+    "postePublic": true
+  },
+  {
+    "id": "38424001",
+    "nom": "ST-MAURICE-EN-TRIEVES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.656667,
+    "lat": 44.755,
+    "alt": 1050,
+    "postePublic": true
+  },
+  {
+    "id": "38424002",
+    "nom": "SAINT-MAURICE-EN-TRIEVES BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.663333,
+    "lat": 44.763333,
+    "alt": 981,
+    "postePublic": true
+  },
+  {
+    "id": "38439400",
+    "nom": "COL DU BARIOZ",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.047333,
+    "lat": 45.324667,
+    "alt": 1424,
+    "postePublic": true
+  },
+  {
+    "id": "38442001",
+    "nom": "GRANDE-CHARTREUSE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.791833,
+    "lat": 45.363333,
+    "alt": 945,
+    "postePublic": true
+  },
+  {
+    "id": "38442002",
+    "nom": "ST-PIERRE-CHARTREUSE-COTTAVES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.815,
+    "lat": 45.341667,
+    "alt": 1080,
+    "postePublic": true
+  },
+  {
+    "id": "38442004",
+    "nom": "LA SCIA",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 5.833333,
+    "lat": 45.333333,
+    "alt": 1700,
+    "postePublic": true
+  },
+  {
+    "id": "38442005",
+    "nom": "ST-PIERRE-DE-CH",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 5.816667,
+    "lat": 45.343333,
+    "alt": 895,
+    "postePublic": true
+  },
+  {
+    "id": "38442006",
+    "nom": "ST-PIERRE-CHARTREUSE-CHARMETTE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.813333,
+    "lat": 45.341667,
+    "alt": 1180,
+    "postePublic": true
+  },
+  {
+    "id": "38442007",
+    "nom": "SAINT-PIERRE-CHARTREUSE-BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.813333,
+    "lat": 45.341667,
+    "alt": 880,
+    "postePublic": true
+  },
+  {
+    "id": "38442008",
+    "nom": "ST-PIERRE-LES EGAUX",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.803833,
+    "lat": 45.317333,
+    "alt": 950,
+    "postePublic": true
+  },
+  {
+    "id": "38442400",
+    "nom": "St Pierre de Chartreuse",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.8465,
+    "lat": 45.345,
+    "alt": 1700,
+    "postePublic": true
+  },
+  {
+    "id": "38442401",
+    "nom": "St Pierre de Chartreuse -S-",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.8465,
+    "lat": 45.345,
+    "alt": 1550,
+    "postePublic": true
+  },
+  {
+    "id": "38446001",
+    "nom": "ST-PIERRE-D'ENTREMONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.85,
+    "lat": 45.413333,
+    "alt": 644,
+    "postePublic": true
+  },
+  {
+    "id": "38446002",
+    "nom": "SAINT-PIERRE-D'ENTREMONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.848333,
+    "lat": 45.38,
+    "alt": 640,
+    "postePublic": true
+  },
+  {
+    "id": "38446003",
+    "nom": "ST-PIERRE-D'ENTREMONT",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.843333,
+    "lat": 45.411,
+    "alt": 870,
+    "postePublic": true
+  },
+  {
+    "id": "38453001",
+    "nom": "ST-ROMANS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.351833,
+    "lat": 45.103167,
+    "alt": 410,
+    "postePublic": true
+  },
+  {
+    "id": "38459001",
+    "nom": "SAINT-SORLIN-DE-VIENNE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.941667,
+    "lat": 45.468333,
+    "alt": 240,
+    "postePublic": true
+  },
+  {
+    "id": "38465001",
+    "nom": "SAINT-VICTOR-DE-MORESTEL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.501667,
+    "lat": 45.693333,
+    "alt": 242,
+    "postePublic": true
+  },
+  {
+    "id": "38469001",
+    "nom": "LA SALETTE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.978333,
+    "lat": 44.86,
+    "alt": 1770,
+    "postePublic": true
+  },
+  {
+    "id": "38469400",
+    "nom": "La Salette",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.98,
+    "lat": 44.85,
+    "alt": 1770,
+    "postePublic": true
+  },
+  {
+    "id": "38471002",
+    "nom": "LE SAPPEY-EN-CHARTREUSE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.776667,
+    "lat": 45.261667,
+    "alt": 1752,
+    "postePublic": true
+  },
+  {
+    "id": "38472400",
+    "nom": "Col de Porte",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.77,
+    "lat": 45.3,
+    "alt": 1325,
+    "postePublic": true
+  },
+  {
+    "id": "38472401",
+    "nom": "Col de Porte -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.765333,
+    "lat": 45.295,
+    "alt": 1325,
+    "postePublic": true
+  },
+  {
+    "id": "38472403",
+    "nom": "COL DE PORTE-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 5.765333,
+    "lat": 45.295,
+    "alt": 1325,
+    "postePublic": true
+  },
+  {
+    "id": "38478001",
+    "nom": "SECHILIENNE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.835,
+    "lat": 45.053333,
+    "alt": 370,
+    "postePublic": true
+  },
+  {
+    "id": "38490003",
+    "nom": "SILLANS BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.388333,
+    "lat": 45.34,
+    "alt": 407,
+    "postePublic": true
+  },
+  {
+    "id": "38499001",
+    "nom": "SUSVILLE CITE PRE-LUZAT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.773333,
+    "lat": 44.926667,
+    "alt": 885,
+    "postePublic": true
+  },
+  {
+    "id": "38501001",
+    "nom": "TENCIN",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.951333,
+    "lat": 45.300167,
+    "alt": 233,
+    "postePublic": true
+  },
+  {
+    "id": "38503001",
+    "nom": "LA TERRASSE ECOLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.931667,
+    "lat": 45.326667,
+    "alt": 234,
+    "postePublic": true
+  },
+  {
+    "id": "38504001",
+    "nom": "THEYS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.995667,
+    "lat": 45.302333,
+    "alt": 615,
+    "postePublic": true
+  },
+  {
+    "id": "38504002",
+    "nom": "PIPAY_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.016,
+    "lat": 45.265333,
+    "alt": 1578,
+    "postePublic": true
+  },
+  {
+    "id": "38509001",
+    "nom": "LA TOUR-DU-PIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.455,
+    "lat": 45.56,
+    "alt": 339,
+    "postePublic": true
+  },
+  {
+    "id": "38509002",
+    "nom": "LA TOUR DU PIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.434333,
+    "lat": 45.565833,
+    "alt": 309,
+    "postePublic": true
+  },
+  {
+    "id": "38514001",
+    "nom": "TREMINIS BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.766667,
+    "lat": 44.746667,
+    "alt": 900,
+    "postePublic": true
+  },
+  {
+    "id": "38514005",
+    "nom": "TREMINIS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.75,
+    "lat": 44.746667,
+    "alt": 850,
+    "postePublic": true
+  },
+  {
+    "id": "38516001",
+    "nom": "LA TRONCHE VILLA BELLEDONNE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.743333,
+    "lat": 45.205,
+    "alt": 225,
+    "postePublic": true
+  },
+  {
+    "id": "38516002",
+    "nom": "LA TRONCHE ASILE DE VIEILLARDS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.743333,
+    "lat": 45.205,
+    "alt": 215,
+    "postePublic": true
+  },
+  {
+    "id": "38517001",
+    "nom": "TULLINS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.489167,
+    "lat": 45.303,
+    "alt": 190,
+    "postePublic": true
+  },
+  {
+    "id": "38518001",
+    "nom": "VALBONNAIS",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.906167,
+    "lat": 44.9005,
+    "alt": 785,
+    "postePublic": true
+  },
+  {
+    "id": "38522001",
+    "nom": "VALJOUFFREY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.018333,
+    "lat": 44.88,
+    "alt": 980,
+    "postePublic": true
+  },
+  {
+    "id": "38522002",
+    "nom": "VALJOUFFREY LE DESERT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.090333,
+    "lat": 44.869167,
+    "alt": 1270,
+    "postePublic": true
+  },
+  {
+    "id": "38522004",
+    "nom": "VALJOUFFREY_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.090167,
+    "lat": 44.869833,
+    "alt": 1285,
+    "postePublic": true
+  },
+  {
+    "id": "38522400",
+    "nom": "REFUGE DE FONT TURBA",
+    "posteOuvert": true,
+    "typePoste": 5,
+    "lon": 6.178,
+    "lat": 44.864667,
+    "alt": 2170,
+    "postePublic": true
+  },
+  {
+    "id": "38524001",
+    "nom": "VARCES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.697667,
+    "lat": 45.101167,
+    "alt": 253,
+    "postePublic": true
+  },
+  {
+    "id": "38527001",
+    "nom": "VAUJANY",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.047167,
+    "lat": 45.149167,
+    "alt": 772,
+    "postePublic": true
+  },
+  {
+    "id": "38527002",
+    "nom": "VAUJANY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.076667,
+    "lat": 45.156667,
+    "alt": 1520,
+    "postePublic": true
+  },
+  {
+    "id": "38527400",
+    "nom": "VAUJANY-NIVO",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.097667,
+    "lat": 45.158833,
+    "alt": 1720,
+    "postePublic": true
+  },
+  {
+    "id": "38527401",
+    "nom": "Vaujany -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.1,
+    "lat": 45.16,
+    "alt": 1720,
+    "postePublic": true
+  },
+  {
+    "id": "38527800",
+    "nom": "VAUJANY_DOUBLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.047,
+    "lat": 45.149167,
+    "alt": 772,
+    "postePublic": true
+  },
+  {
+    "id": "38529001",
+    "nom": "VAULNAVEYS-LE-HAUT LA GORGE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.811667,
+    "lat": 45.12,
+    "alt": 355,
+    "postePublic": true
+  },
+  {
+    "id": "38529002",
+    "nom": "VAULNAVEYS-LE-HAUT PREMOL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.811667,
+    "lat": 45.12,
+    "alt": 1095,
+    "postePublic": true
+  },
+  {
+    "id": "38529003",
+    "nom": "VAULNAVEYS-LE-HAUT URIAGE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.811667,
+    "lat": 45.12,
+    "alt": 414,
+    "postePublic": true
+  },
+  {
+    "id": "38534001",
+    "nom": "VENOSC PLAN DU LAC",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.116667,
+    "lat": 44.99,
+    "alt": 1180,
+    "postePublic": true
+  },
+  {
+    "id": "38534002",
+    "nom": "VENOSC LES DEUX-ALPES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.116667,
+    "lat": 44.99,
+    "alt": 1650,
+    "postePublic": true
+  },
+  {
+    "id": "38538001",
+    "nom": "LE VERSOUD",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.856667,
+    "lat": 45.211667,
+    "alt": 220,
+    "postePublic": true
+  },
+  {
+    "id": "38538002",
+    "nom": "GRENOBLE - LVD",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.8485,
+    "lat": 45.217167,
+    "alt": 220,
+    "postePublic": true
+  },
+  {
+    "id": "38544001",
+    "nom": "VIENNE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 4.881667,
+    "lat": 45.533333,
+    "alt": 274,
+    "postePublic": true
+  },
+  {
+    "id": "38545001",
+    "nom": "VIF REYNURE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.668333,
+    "lat": 45.053333,
+    "alt": 285,
+    "postePublic": true
+  },
+  {
+    "id": "38548001",
+    "nom": "VILLARD-DE-LANS",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.561,
+    "lat": 45.0785,
+    "alt": 1027,
+    "postePublic": true
+  },
+  {
+    "id": "38548002",
+    "nom": "VILLARD-DE-LANS-GEND",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.552333,
+    "lat": 45.070333,
+    "alt": 1031,
+    "postePublic": true
+  },
+  {
+    "id": "38548003",
+    "nom": "VILLARD-BOIS BARBU",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.542,
+    "lat": 45.0715,
+    "alt": 1018,
+    "postePublic": true
+  },
+  {
+    "id": "38548400",
+    "nom": "Villard cote 2000",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.567667,
+    "lat": 45.024333,
+    "alt": 1710,
+    "postePublic": true
+  },
+  {
+    "id": "38548401",
+    "nom": "Villard cote 2000 -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.570333,
+    "lat": 45.0225,
+    "alt": 1720,
+    "postePublic": true
+  },
+  {
+    "id": "38548402",
+    "nom": "Villard de Lans",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.555333,
+    "lat": 45.074833,
+    "alt": 1020,
+    "postePublic": true
+  },
+  {
+    "id": "38548403",
+    "nom": "VILLARD-BOIS-BARBU",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.542,
+    "lat": 45.0715,
+    "alt": 1018,
+    "postePublic": true
+  },
+  {
+    "id": "38549001",
+    "nom": "VILLARD-NOTRE-DAME VILLAGE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.041667,
+    "lat": 45.018333,
+    "alt": 1550,
+    "postePublic": true
+  },
+  {
+    "id": "38559001",
+    "nom": "VINAY BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.401667,
+    "lat": 45.21,
+    "alt": 260,
+    "postePublic": true
+  },
+  {
+    "id": "38559004",
+    "nom": "VINAY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.376833,
+    "lat": 45.212,
+    "alt": 400,
+    "postePublic": true
+  },
+  {
+    "id": "38563001",
+    "nom": "VOIRON PENSIONNAT SAINT-JOSEPH",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.588333,
+    "lat": 45.366667,
+    "alt": 292,
+    "postePublic": true
+  },
+  {
+    "id": "38567001",
+    "nom": "CHAMROUSSE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.88,
+    "lat": 45.101667,
+    "alt": 1650,
+    "postePublic": true
+  },
+  {
+    "id": "38567002",
+    "nom": "CHAMROUSSE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.878333,
+    "lat": 45.128,
+    "alt": 1730,
+    "postePublic": true
+  },
+  {
+    "id": "38567400",
+    "nom": "CHAMROUSSE ARSELLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.876,
+    "lat": 45.098667,
+    "alt": 1650,
+    "postePublic": true
+  },
+  {
+    "id": "38567406",
+    "nom": "CHAMROUSSE -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.911667,
+    "lat": 45.126667,
+    "alt": 2150,
+    "postePublic": true
+  },
+  {
+    "id": "38567407",
+    "nom": "Chamrousse Niverolles",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.895667,
+    "lat": 45.120667,
+    "alt": 2022,
+    "postePublic": true
+  }
+]

@@ -1,0 +1,6 @@
+# Local python virtualenv
+.venv/
+# Local secrets (do not commit)
+.secrets/
+.env
+.env.local

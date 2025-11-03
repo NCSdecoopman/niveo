@@ -1,0 +1,422 @@
+[
+  {
+    "id": "73011004",
+    "nom": "ALBERTVILLE JO",
+    "posteOuvert": false,
+    "typePoste": 1,
+    "lon": 6.371833,
+    "lat": 45.662333,
+    "alt": 332,
+    "postePublic": true
+  },
+  {
+    "id": "73013002",
+    "nom": "ALBIEZ-MONTROND",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.336333,
+    "lat": 45.210667,
+    "alt": 1633,
+    "postePublic": true
+  },
+  {
+    "id": "73026001",
+    "nom": "AVRIEUX",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.716833,
+    "lat": 45.214,
+    "alt": 1104,
+    "postePublic": true
+  },
+  {
+    "id": "73034002",
+    "nom": "BEAUFORT-SUR-DORON",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.568667,
+    "lat": 45.691,
+    "alt": 1036,
+    "postePublic": true
+  },
+  {
+    "id": "73040005",
+    "nom": "BESSANS-CLIM",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 7.002333,
+    "lat": 45.322833,
+    "alt": 1731,
+    "postePublic": true
+  },
+  {
+    "id": "73051001",
+    "nom": "MONT DU CHAT",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.8215,
+    "lat": 45.6605,
+    "alt": 1496,
+    "postePublic": true
+  },
+  {
+    "id": "73052002",
+    "nom": "BOURGET EN HUILE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.207667,
+    "lat": 45.486667,
+    "alt": 820,
+    "postePublic": true
+  },
+  {
+    "id": "73054001",
+    "nom": "BOURG ST MAURICE",
+    "posteOuvert": true,
+    "typePoste": 0,
+    "lon": 6.763333,
+    "lat": 45.612667,
+    "alt": 865,
+    "postePublic": true
+  },
+  {
+    "id": "73055001",
+    "nom": "BOZEL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.6495,
+    "lat": 45.44,
+    "alt": 865,
+    "postePublic": true
+  },
+  {
+    "id": "73064001",
+    "nom": "CHALLES LES EAUX",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.970333,
+    "lat": 45.565167,
+    "alt": 298,
+    "postePublic": true
+  },
+  {
+    "id": "73098003",
+    "nom": "FECLAZ_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.983667,
+    "lat": 45.647167,
+    "alt": 1328,
+    "postePublic": true
+  },
+  {
+    "id": "73107001",
+    "nom": "ENTREMONT LE VIEUX_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.9005,
+    "lat": 45.444167,
+    "alt": 1059,
+    "postePublic": true
+  },
+  {
+    "id": "73132003",
+    "nom": "COL-DES-SAISIES",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.535333,
+    "lat": 45.755,
+    "alt": 1614,
+    "postePublic": true
+  },
+  {
+    "id": "73139001",
+    "nom": "JARSY_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.176833,
+    "lat": 45.658833,
+    "alt": 832,
+    "postePublic": true
+  },
+  {
+    "id": "73144001",
+    "nom": "MONT CENIS",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.899167,
+    "lat": 45.269333,
+    "alt": 2032,
+    "postePublic": true
+  },
+  {
+    "id": "73146001",
+    "nom": "LESCHERAINES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.108333,
+    "lat": 45.715167,
+    "alt": 591,
+    "postePublic": true
+  },
+  {
+    "id": "73150004",
+    "nom": "LA PLAGNE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.675167,
+    "lat": 45.500333,
+    "alt": 2120,
+    "postePublic": true
+  },
+  {
+    "id": "73157004",
+    "nom": "FREJUS",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 6.674167,
+    "lat": 45.193667,
+    "alt": 1228,
+    "postePublic": true
+  },
+  {
+    "id": "73167001",
+    "nom": "MONTGELLAFREY",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.321,
+    "lat": 45.393,
+    "alt": 1057,
+    "postePublic": true
+  },
+  {
+    "id": "73171002",
+    "nom": "MONTMELIAN",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.049167,
+    "lat": 45.493833,
+    "alt": 264,
+    "postePublic": true
+  },
+  {
+    "id": "73187006",
+    "nom": "LA LECHERE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.501,
+    "lat": 45.549167,
+    "alt": 1195,
+    "postePublic": true
+  },
+  {
+    "id": "73191001",
+    "nom": "NOVALAISE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.776833,
+    "lat": 45.597333,
+    "alt": 460,
+    "postePublic": true
+  },
+  {
+    "id": "73191005",
+    "nom": "LAC AIGUEBELETTE",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 5.795833,
+    "lat": 45.564833,
+    "alt": 375,
+    "postePublic": true
+  },
+  {
+    "id": "73220001",
+    "nom": "ST-ALBAN DES HURTIERES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.271333,
+    "lat": 45.477167,
+    "alt": 610,
+    "postePublic": true
+  },
+  {
+    "id": "73229001",
+    "nom": "ST-CHRISTOPHE LA-GROTTE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.777333,
+    "lat": 45.452833,
+    "alt": 420,
+    "postePublic": true
+  },
+  {
+    "id": "73242003",
+    "nom": "ST JEAN D'ARVES_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.278833,
+    "lat": 45.206833,
+    "alt": 1573,
+    "postePublic": true
+  },
+  {
+    "id": "73244001",
+    "nom": "ST-JEAN DE BELLEVILLE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.482833,
+    "lat": 45.427667,
+    "alt": 1150,
+    "postePublic": true
+  },
+  {
+    "id": "73248003",
+    "nom": "ST JEAN DE MAUR",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.333333,
+    "lat": 45.266667,
+    "alt": 610,
+    "postePublic": true
+  },
+  {
+    "id": "73255003",
+    "nom": "STE MARIE CUINES",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.307167,
+    "lat": 45.3435,
+    "alt": 460,
+    "postePublic": true
+  },
+  {
+    "id": "73257001",
+    "nom": "ST-MARTIN DE BELLEVILLE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.5105,
+    "lat": 45.368167,
+    "alt": 1443,
+    "postePublic": true
+  },
+  {
+    "id": "73257005",
+    "nom": "VAL THORENS_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.581,
+    "lat": 45.294,
+    "alt": 2277,
+    "postePublic": true
+  },
+  {
+    "id": "73258001",
+    "nom": "ST-MARTIN DE LA PORTE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.446167,
+    "lat": 45.238833,
+    "alt": 763,
+    "postePublic": true
+  },
+  {
+    "id": "73261001",
+    "nom": "ST-MICHEL DE MAURIENNE LE THYL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.490833,
+    "lat": 45.223667,
+    "alt": 1345,
+    "postePublic": true
+  },
+  {
+    "id": "73261003",
+    "nom": "ST MICHEL MAUR_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.4645,
+    "lat": 45.218167,
+    "alt": 698,
+    "postePublic": true
+  },
+  {
+    "id": "73280001",
+    "nom": "ST-SORLIN D'ARVES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.216333,
+    "lat": 45.224,
+    "alt": 1694,
+    "postePublic": true
+  },
+  {
+    "id": "73290002",
+    "nom": "TERMIGNON-CLIM",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.8145,
+    "lat": 45.274833,
+    "alt": 1280,
+    "postePublic": true
+  },
+  {
+    "id": "73296005",
+    "nom": "TIGNES_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.907167,
+    "lat": 45.467,
+    "alt": 2084,
+    "postePublic": true
+  },
+  {
+    "id": "73297003",
+    "nom": "ALBERTVILLE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.327667,
+    "lat": 45.627833,
+    "alt": 314,
+    "postePublic": true
+  },
+  {
+    "id": "73303005",
+    "nom": "UGINE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.421,
+    "lat": 45.759167,
+    "alt": 539,
+    "postePublic": true
+  },
+  {
+    "id": "73304005",
+    "nom": "VAL D'ISERE JOS",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.978167,
+    "lat": 45.444833,
+    "alt": 1850,
+    "postePublic": true
+  },
+  {
+    "id": "73322001",
+    "nom": "LA NORMA_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.7035,
+    "lat": 45.190667,
+    "alt": 1985,
+    "postePublic": true
+  },
+  {
+    "id": "73329001",
+    "nom": "CHAMBERY-AIX",
+    "posteOuvert": true,
+    "typePoste": 0,
+    "lon": 5.878,
+    "lat": 45.641333,
+    "alt": 235,
+    "postePublic": true
+  }
+]

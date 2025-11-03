@@ -1,0 +1,1852 @@
+[
+  {
+    "id": "74001001",
+    "nom": "ABONDANCE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.734167,
+    "lat": 46.2845,
+    "alt": 947,
+    "postePublic": true
+  },
+  {
+    "id": "74001002",
+    "nom": "ABONDANCE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.72,
+    "lat": 46.28,
+    "alt": 935,
+    "postePublic": true
+  },
+  {
+    "id": "74002001",
+    "nom": "ALBY SUR CHERAN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.021667,
+    "lat": 45.816667,
+    "alt": 422,
+    "postePublic": true
+  },
+  {
+    "id": "74003001",
+    "nom": "ALEX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.233833,
+    "lat": 45.885,
+    "alt": 680,
+    "postePublic": true
+  },
+  {
+    "id": "74010001",
+    "nom": "ANNECY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.115,
+    "lat": 45.901667,
+    "alt": 448,
+    "postePublic": true
+  },
+  {
+    "id": "74012001",
+    "nom": "ANNEMASSE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.248333,
+    "lat": 46.196667,
+    "alt": 445,
+    "postePublic": true
+  },
+  {
+    "id": "74012002",
+    "nom": "ANNEMASSE EQUIPEMENT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.231667,
+    "lat": 46.193333,
+    "alt": 420,
+    "postePublic": true
+  },
+  {
+    "id": "74014001",
+    "nom": "ARACHES LA COMBE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.646667,
+    "lat": 46.046667,
+    "alt": 1120,
+    "postePublic": true
+  },
+  {
+    "id": "74014002",
+    "nom": "LES CARROZ",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.644,
+    "lat": 46.024667,
+    "alt": 1151,
+    "postePublic": true
+  },
+  {
+    "id": "74014004",
+    "nom": "FLAINE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.697167,
+    "lat": 46.002833,
+    "alt": 1611,
+    "postePublic": true
+  },
+  {
+    "id": "74014400",
+    "nom": "Flaine",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.697333,
+    "lat": 46.0035,
+    "alt": 1620,
+    "postePublic": true
+  },
+  {
+    "id": "74014401",
+    "nom": "Flaine -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.705167,
+    "lat": 45.985667,
+    "alt": 2200,
+    "postePublic": true
+  },
+  {
+    "id": "74014402",
+    "nom": "LES CARROZ KEDEUSAZ",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.665667,
+    "lat": 46.027667,
+    "alt": 1760,
+    "postePublic": true
+  },
+  {
+    "id": "74014403",
+    "nom": "Les Carroz d Araches -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.689167,
+    "lat": 46.031333,
+    "alt": 1950,
+    "postePublic": true
+  },
+  {
+    "id": "74014404",
+    "nom": "LES CARROZ VILLAGE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.643833,
+    "lat": 46.024667,
+    "alt": 1152,
+    "postePublic": true
+  },
+  {
+    "id": "74016001",
+    "nom": "ARCHAMPS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.140167,
+    "lat": 46.131833,
+    "alt": 560,
+    "postePublic": true
+  },
+  {
+    "id": "74024001",
+    "nom": "AYZE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.431333,
+    "lat": 46.0795,
+    "alt": 449,
+    "postePublic": true
+  },
+  {
+    "id": "74031001",
+    "nom": "BEAUMONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.105667,
+    "lat": 46.093,
+    "alt": 690,
+    "postePublic": true
+  },
+  {
+    "id": "74032001",
+    "nom": "BELLEVAUX LE CHAMP DU NOYER",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.53,
+    "lat": 46.255,
+    "alt": 912,
+    "postePublic": true
+  },
+  {
+    "id": "74032401",
+    "nom": "Bellevaux -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.499167,
+    "lat": 46.235,
+    "alt": 1500,
+    "postePublic": true
+  },
+  {
+    "id": "74033400",
+    "nom": "Bernex",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.708167,
+    "lat": 46.341167,
+    "alt": 1535,
+    "postePublic": true
+  },
+  {
+    "id": "74033401",
+    "nom": "Bernex -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.712833,
+    "lat": 46.339833,
+    "alt": 1704,
+    "postePublic": true
+  },
+  {
+    "id": "74034001",
+    "nom": "LE BIOT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.621,
+    "lat": 46.278167,
+    "alt": 690,
+    "postePublic": true
+  },
+  {
+    "id": "74034002",
+    "nom": "LE BIOT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.633333,
+    "lat": 46.261667,
+    "alt": 780,
+    "postePublic": true
+  },
+  {
+    "id": "74035001",
+    "nom": "BLOYE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 5.944667,
+    "lat": 45.821667,
+    "alt": 375,
+    "postePublic": true
+  },
+  {
+    "id": "74037001",
+    "nom": "BOEGE VOIRONS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.416667,
+    "lat": 46.211667,
+    "alt": 1400,
+    "postePublic": true
+  },
+  {
+    "id": "74037002",
+    "nom": "BOEGE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.395,
+    "lat": 46.213333,
+    "alt": 750,
+    "postePublic": true
+  },
+  {
+    "id": "74038001",
+    "nom": "BOGEVE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.466667,
+    "lat": 46.198333,
+    "alt": 1250,
+    "postePublic": true
+  },
+  {
+    "id": "74041001",
+    "nom": "BONNEVAUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.678333,
+    "lat": 46.311667,
+    "alt": 800,
+    "postePublic": true
+  },
+  {
+    "id": "74042001",
+    "nom": "BONNEVILLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.408333,
+    "lat": 46.078333,
+    "alt": 447,
+    "postePublic": true
+  },
+  {
+    "id": "74042002",
+    "nom": "BONNEVILLE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.408333,
+    "lat": 46.078333,
+    "alt": 449,
+    "postePublic": true
+  },
+  {
+    "id": "74042003",
+    "nom": "BONNEVILLE",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.399833,
+    "lat": 46.0685,
+    "alt": 453,
+    "postePublic": true
+  },
+  {
+    "id": "74043001",
+    "nom": "BONS CHABLAIS",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.338333,
+    "lat": 46.263333,
+    "alt": 575,
+    "postePublic": true
+  },
+  {
+    "id": "74045001",
+    "nom": "LE BOUCHET_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.367667,
+    "lat": 45.7995,
+    "alt": 925,
+    "postePublic": true
+  },
+  {
+    "id": "74050001",
+    "nom": "BURDIGNIN ECOLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.423333,
+    "lat": 46.22,
+    "alt": 850,
+    "postePublic": true
+  },
+  {
+    "id": "74051001",
+    "nom": "CERCIER",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.048333,
+    "lat": 46.026667,
+    "alt": 580,
+    "postePublic": true
+  },
+  {
+    "id": "74051002",
+    "nom": "CERCIER",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.0435,
+    "lat": 46.031833,
+    "alt": 492,
+    "postePublic": true
+  },
+  {
+    "id": "74056001",
+    "nom": "CHAMONIX",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.8775,
+    "lat": 45.9295,
+    "alt": 1042,
+    "postePublic": true
+  },
+  {
+    "id": "74056002",
+    "nom": "CHAMONIX-MONT-BLANC GLACIER",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.863333,
+    "lat": 45.92,
+    "alt": 2060,
+    "postePublic": true
+  },
+  {
+    "id": "74056003",
+    "nom": "LE TOUR",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.946667,
+    "lat": 46.003333,
+    "alt": 1460,
+    "postePublic": true
+  },
+  {
+    "id": "74056004",
+    "nom": "ARGENTIERE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.928333,
+    "lat": 45.983333,
+    "alt": 1275,
+    "postePublic": true
+  },
+  {
+    "id": "74056005",
+    "nom": "LE TOUR",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.9485,
+    "lat": 46.003833,
+    "alt": 1500,
+    "postePublic": true
+  },
+  {
+    "id": "74056006",
+    "nom": "AIGUILLE DU MIDI",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.8875,
+    "lat": 45.8785,
+    "alt": 3845,
+    "postePublic": true
+  },
+  {
+    "id": "74056007",
+    "nom": "CHAMONIX-MONT-BLANC BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.863333,
+    "lat": 45.921667,
+    "alt": 1395,
+    "postePublic": true
+  },
+  {
+    "id": "74056400",
+    "nom": "CHAMONIX-OBS",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.867333,
+    "lat": 45.923333,
+    "alt": 1043,
+    "postePublic": true
+  },
+  {
+    "id": "74056401",
+    "nom": "OCCAS LE BREVENT -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.840833,
+    "lat": 45.935,
+    "alt": 2321,
+    "postePublic": true
+  },
+  {
+    "id": "74056402",
+    "nom": "LE TOUR NIVO",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.947333,
+    "lat": 46.002333,
+    "alt": 1478,
+    "postePublic": true
+  },
+  {
+    "id": "74056403",
+    "nom": "Le Tour -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.948167,
+    "lat": 46.029167,
+    "alt": 1923,
+    "postePublic": true
+  },
+  {
+    "id": "74056405",
+    "nom": "AIGUILLES ROUGES-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.896833,
+    "lat": 45.986333,
+    "alt": 2365,
+    "postePublic": true
+  },
+  {
+    "id": "74056406",
+    "nom": "OCCAS LOGNAN -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.949333,
+    "lat": 45.951667,
+    "alt": 2700,
+    "postePublic": true
+  },
+  {
+    "id": "74056407",
+    "nom": "Enq. aval Chamonix -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.878333,
+    "lat": 45.928333,
+    "alt": 1042,
+    "postePublic": true
+  },
+  {
+    "id": "74056408",
+    "nom": "Occasionnel Chamonix -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.878333,
+    "lat": 45.928333,
+    "alt": 1042,
+    "postePublic": true
+  },
+  {
+    "id": "74056409",
+    "nom": "Plan de l Aiguille -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.885333,
+    "lat": 45.901833,
+    "alt": 2300,
+    "postePublic": true
+  },
+  {
+    "id": "74056416",
+    "nom": "Lognan",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.942833,
+    "lat": 45.968333,
+    "alt": 1970,
+    "postePublic": true
+  },
+  {
+    "id": "74056417",
+    "nom": "LA FLEGERE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.889167,
+    "lat": 45.9625,
+    "alt": 1850,
+    "postePublic": true
+  },
+  {
+    "id": "74056418",
+    "nom": "LE TOUR BALME",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.970833,
+    "lat": 46.020833,
+    "alt": 2196,
+    "postePublic": true
+  },
+  {
+    "id": "74056419",
+    "nom": "PLAN AIGUILLE TMB",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.885833,
+    "lat": 45.901167,
+    "alt": 2310,
+    "postePublic": true
+  },
+  {
+    "id": "74056420",
+    "nom": "MONTENVERS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.916167,
+    "lat": 45.932167,
+    "alt": 1945,
+    "postePublic": true
+  },
+  {
+    "id": "74056421",
+    "nom": "COUVERCLE-NIVOSE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.958833,
+    "lat": 45.909667,
+    "alt": 2758,
+    "postePublic": true
+  },
+  {
+    "id": "74060001",
+    "nom": "CHAPELLE SAINT-MAURICE_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.152167,
+    "lat": 45.782333,
+    "alt": 970,
+    "postePublic": true
+  },
+  {
+    "id": "74062001",
+    "nom": "CHARVONNEX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.166667,
+    "lat": 45.985,
+    "alt": 520,
+    "postePublic": true
+  },
+  {
+    "id": "74063002",
+    "nom": "CHATEL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.818833,
+    "lat": 46.255833,
+    "alt": 1155,
+    "postePublic": true
+  },
+  {
+    "id": "74063403",
+    "nom": "Chatel -S-",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.795167,
+    "lat": 46.215333,
+    "alt": 1704,
+    "postePublic": true
+  },
+  {
+    "id": "74063404",
+    "nom": "CHATEL NIVO",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.792333,
+    "lat": 46.218333,
+    "alt": 1635,
+    "postePublic": true
+  },
+  {
+    "id": "74063405",
+    "nom": "CHATEL NIVO",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.797167,
+    "lat": 46.225167,
+    "alt": 1700,
+    "postePublic": true
+  },
+  {
+    "id": "74063406",
+    "nom": "CHATEL -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.820667,
+    "lat": 46.225,
+    "alt": 2030,
+    "postePublic": true
+  },
+  {
+    "id": "74064001",
+    "nom": "CHATILLON-SUR-CLUSES BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.583333,
+    "lat": 46.086667,
+    "alt": 635,
+    "postePublic": true
+  },
+  {
+    "id": "74080001",
+    "nom": "CLUSAZ (LA)",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.428333,
+    "lat": 45.898333,
+    "alt": 1150,
+    "postePublic": true
+  },
+  {
+    "id": "74080002",
+    "nom": "CLUSAZ (LA)",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.427167,
+    "lat": 45.887167,
+    "alt": 1180,
+    "postePublic": true
+  },
+  {
+    "id": "74080401",
+    "nom": "OCCAS LA CLUSAZ -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.489167,
+    "lat": 45.890333,
+    "alt": 2450,
+    "postePublic": true
+  },
+  {
+    "id": "74080403",
+    "nom": "LA CLUSAZ",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.445667,
+    "lat": 45.8935,
+    "alt": 1597,
+    "postePublic": true
+  },
+  {
+    "id": "74080404",
+    "nom": "LA CLUSAZ",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.4855,
+    "lat": 45.900833,
+    "alt": 1965,
+    "postePublic": true
+  },
+  {
+    "id": "74081001",
+    "nom": "CLUSES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.563333,
+    "lat": 46.08,
+    "alt": 477,
+    "postePublic": true
+  },
+  {
+    "id": "74081002",
+    "nom": "CLUSES",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.559833,
+    "lat": 46.080667,
+    "alt": 475,
+    "postePublic": true
+  },
+  {
+    "id": "74081003",
+    "nom": "CLUSES",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.588333,
+    "lat": 46.048333,
+    "alt": 485,
+    "postePublic": true
+  },
+  {
+    "id": "74081004",
+    "nom": "CLUSES PONTHION",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.578333,
+    "lat": 46.058333,
+    "alt": 500,
+    "postePublic": true
+  },
+  {
+    "id": "74083001",
+    "nom": "COMBLOUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.643333,
+    "lat": 45.898333,
+    "alt": 940,
+    "postePublic": true
+  },
+  {
+    "id": "74083002",
+    "nom": "COMBLOUX",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.626667,
+    "lat": 45.892833,
+    "alt": 1183,
+    "postePublic": true
+  },
+  {
+    "id": "74085001",
+    "nom": "CONTAMINES MJ",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.728833,
+    "lat": 45.822333,
+    "alt": 1180,
+    "postePublic": true
+  },
+  {
+    "id": "74085404",
+    "nom": "Les Contamines Montjoie -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.669,
+    "lat": 45.802833,
+    "alt": 2272,
+    "postePublic": true
+  },
+  {
+    "id": "74085406",
+    "nom": "LES CONTAMINES MONTJOIE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.699833,
+    "lat": 45.791833,
+    "alt": 1780,
+    "postePublic": true
+  },
+  {
+    "id": "74085407",
+    "nom": "CONTAMINES MJ_NEIGE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.728833,
+    "lat": 45.822333,
+    "alt": 1180,
+    "postePublic": true
+  },
+  {
+    "id": "74087001",
+    "nom": "CONTAMINE-SUR- ARVE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.34,
+    "lat": 46.128667,
+    "alt": 452,
+    "postePublic": true
+  },
+  {
+    "id": "74093001",
+    "nom": "CRAN-GEVRIER",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.107833,
+    "lat": 45.910833,
+    "alt": 426,
+    "postePublic": true
+  },
+  {
+    "id": "74096001",
+    "nom": "CRUSEILLES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.106667,
+    "lat": 46.033333,
+    "alt": 783,
+    "postePublic": true
+  },
+  {
+    "id": "74097001",
+    "nom": "CUSY CHEF LIEU",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.028333,
+    "lat": 45.766667,
+    "alt": 575,
+    "postePublic": true
+  },
+  {
+    "id": "74104001",
+    "nom": "DOUSSARD",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.225,
+    "lat": 45.783333,
+    "alt": 465,
+    "postePublic": true
+  },
+  {
+    "id": "74105001",
+    "nom": "DOUVAINE BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.301667,
+    "lat": 46.305,
+    "alt": 428,
+    "postePublic": true
+  },
+  {
+    "id": "74105002",
+    "nom": "DOUVAINE SA",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.318333,
+    "lat": 46.302333,
+    "alt": 470,
+    "postePublic": true
+  },
+  {
+    "id": "74110001",
+    "nom": "ENTREMONT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.393,
+    "lat": 45.953333,
+    "alt": 830,
+    "postePublic": true
+  },
+  {
+    "id": "74116002",
+    "nom": "ETEAUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.275667,
+    "lat": 46.063,
+    "alt": 805,
+    "postePublic": true
+  },
+  {
+    "id": "74116004",
+    "nom": "COL D'EVIRES",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.264,
+    "lat": 46.047167,
+    "alt": 789,
+    "postePublic": true
+  },
+  {
+    "id": "74117001",
+    "nom": "ETERCY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.01,
+    "lat": 45.89,
+    "alt": 512,
+    "postePublic": true
+  },
+  {
+    "id": "74119001",
+    "nom": "EVIAN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.598333,
+    "lat": 46.401667,
+    "alt": 380,
+    "postePublic": true
+  },
+  {
+    "id": "74119002",
+    "nom": "EVIAN",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.5665,
+    "lat": 46.3965,
+    "alt": 395,
+    "postePublic": true
+  },
+  {
+    "id": "74119003",
+    "nom": "EVIAN SA",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.5825,
+    "lat": 46.382333,
+    "alt": 725,
+    "postePublic": true
+  },
+  {
+    "id": "74123001",
+    "nom": "FAVERGES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.293333,
+    "lat": 45.746667,
+    "alt": 516,
+    "postePublic": true
+  },
+  {
+    "id": "74123002",
+    "nom": "FAVERGES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.281833,
+    "lat": 45.753333,
+    "alt": 507,
+    "postePublic": true
+  },
+  {
+    "id": "74123400",
+    "nom": "LA SAMBUY -S-",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.270667,
+    "lat": 45.698333,
+    "alt": 1840,
+    "postePublic": true
+  },
+  {
+    "id": "74133001",
+    "nom": "GAILLARD",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.210333,
+    "lat": 46.176,
+    "alt": 399,
+    "postePublic": true
+  },
+  {
+    "id": "74134002",
+    "nom": "GETS (LES)",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.670333,
+    "lat": 46.158667,
+    "alt": 1172,
+    "postePublic": true
+  },
+  {
+    "id": "74134400",
+    "nom": "Les Gets",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.659167,
+    "lat": 46.165833,
+    "alt": 1530,
+    "postePublic": true
+  },
+  {
+    "id": "74134401",
+    "nom": "Les Gets -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.642167,
+    "lat": 46.163667,
+    "alt": 1720,
+    "postePublic": true
+  },
+  {
+    "id": "74135001",
+    "nom": "GIEZ",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.255333,
+    "lat": 45.762667,
+    "alt": 478,
+    "postePublic": true
+  },
+  {
+    "id": "74136002",
+    "nom": "GRAND-BORNAND",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.426667,
+    "lat": 45.941667,
+    "alt": 1200,
+    "postePublic": true
+  },
+  {
+    "id": "74136003",
+    "nom": "GRAND BORNAND",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.444667,
+    "lat": 45.970333,
+    "alt": 1300,
+    "postePublic": true
+  },
+  {
+    "id": "74136004",
+    "nom": "LE GRAND-BORNAND BOURG",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.426667,
+    "lat": 45.941667,
+    "alt": 934,
+    "postePublic": true
+  },
+  {
+    "id": "74136005",
+    "nom": "LE GRAND-BORNAND",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.471833,
+    "lat": 45.973333,
+    "alt": 1430,
+    "postePublic": true
+  },
+  {
+    "id": "74136400",
+    "nom": "Le Grand Bornand",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.454167,
+    "lat": 45.972,
+    "alt": 1270,
+    "postePublic": true
+  },
+  {
+    "id": "74136401",
+    "nom": "Le Grand Bornand -S-",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.4955,
+    "lat": 45.9695,
+    "alt": 1700,
+    "postePublic": true
+  },
+  {
+    "id": "74136402",
+    "nom": "GRAND-BORNAND -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.484833,
+    "lat": 45.962167,
+    "alt": 1800,
+    "postePublic": true
+  },
+  {
+    "id": "74136403",
+    "nom": "GRAND-BORNAND",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.456167,
+    "lat": 45.958167,
+    "alt": 1447,
+    "postePublic": true
+  },
+  {
+    "id": "74137001",
+    "nom": "GROISY_SAPC",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.1745,
+    "lat": 46.012667,
+    "alt": 670,
+    "postePublic": true
+  },
+  {
+    "id": "74137002",
+    "nom": "GROISY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.176667,
+    "lat": 46.013333,
+    "alt": 750,
+    "postePublic": true
+  },
+  {
+    "id": "74140001",
+    "nom": "HABERE-POCHE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.491667,
+    "lat": 46.246667,
+    "alt": 1093,
+    "postePublic": true
+  },
+  {
+    "id": "74140002",
+    "nom": "HABERE-POCHE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.473333,
+    "lat": 46.251667,
+    "alt": 960,
+    "postePublic": true
+  },
+  {
+    "id": "74143002",
+    "nom": "MT LACHAT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.796667,
+    "lat": 45.888333,
+    "alt": 2075,
+    "postePublic": true
+  },
+  {
+    "id": "74143003",
+    "nom": "HOUCHES (LES)",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.800667,
+    "lat": 45.8925,
+    "alt": 1004,
+    "postePublic": true
+  },
+  {
+    "id": "74173001",
+    "nom": "MEGEVE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.608167,
+    "lat": 45.855333,
+    "alt": 1080,
+    "postePublic": true
+  },
+  {
+    "id": "74173400",
+    "nom": "MEGEVE AUXI",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.608,
+    "lat": 45.855667,
+    "alt": 1080,
+    "postePublic": true
+  },
+  {
+    "id": "74173401",
+    "nom": "Megeve -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.642667,
+    "lat": 45.803833,
+    "alt": 2005,
+    "postePublic": true
+  },
+  {
+    "id": "74173402",
+    "nom": "MEGEVE_NEIGE",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.608167,
+    "lat": 45.855333,
+    "alt": 1080,
+    "postePublic": true
+  },
+  {
+    "id": "74176001",
+    "nom": "MENTHON-SAINT-BERNARD ECOLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.195,
+    "lat": 45.86,
+    "alt": 480,
+    "postePublic": true
+  },
+  {
+    "id": "74182001",
+    "nom": "MEYTHET",
+    "posteOuvert": true,
+    "typePoste": 0,
+    "lon": 6.094,
+    "lat": 45.928167,
+    "alt": 455,
+    "postePublic": true
+  },
+  {
+    "id": "74183400",
+    "nom": "PRAZ-DE-LYS -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.570667,
+    "lat": 46.152167,
+    "alt": 1790,
+    "postePublic": true
+  },
+  {
+    "id": "74185001",
+    "nom": "MONNETIER-MORNEX TREIZE ARBRES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.206667,
+    "lat": 46.16,
+    "alt": 1146,
+    "postePublic": true
+  },
+  {
+    "id": "74187001",
+    "nom": "MONTMIN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.265,
+    "lat": 45.803833,
+    "alt": 1050,
+    "postePublic": true
+  },
+  {
+    "id": "74189001",
+    "nom": "MONT-SAXONNEX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.483333,
+    "lat": 46.048167,
+    "alt": 990,
+    "postePublic": true
+  },
+  {
+    "id": "74190401",
+    "nom": "Morillon -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.695167,
+    "lat": 46.0375,
+    "alt": 1828,
+    "postePublic": true
+  },
+  {
+    "id": "74191001",
+    "nom": "MORZINE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.708333,
+    "lat": 46.178333,
+    "alt": 960,
+    "postePublic": true
+  },
+  {
+    "id": "74191002",
+    "nom": "MORZINE LA BEZIERE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.708333,
+    "lat": 46.178333,
+    "alt": 1000,
+    "postePublic": true
+  },
+  {
+    "id": "74191003",
+    "nom": "LE PLENEY",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.692833,
+    "lat": 46.168333,
+    "alt": 1515,
+    "postePublic": true
+  },
+  {
+    "id": "74191400",
+    "nom": "Morzine",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.71,
+    "lat": 46.18,
+    "alt": 960,
+    "postePublic": true
+  },
+  {
+    "id": "74191404",
+    "nom": "Avoriaz -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.7845,
+    "lat": 46.172333,
+    "alt": 2150,
+    "postePublic": true
+  },
+  {
+    "id": "74191406",
+    "nom": "Avoriaz",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.779833,
+    "lat": 46.186167,
+    "alt": 1768,
+    "postePublic": true
+  },
+  {
+    "id": "74191407",
+    "nom": "OCCAS AVORIAZ",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.709167,
+    "lat": 46.18,
+    "alt": 1800,
+    "postePublic": true
+  },
+  {
+    "id": "74193001",
+    "nom": "LA CROISETTE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.171167,
+    "lat": 46.119167,
+    "alt": 1175,
+    "postePublic": true
+  },
+  {
+    "id": "74203001",
+    "nom": "NOVEL",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.79,
+    "lat": 46.368833,
+    "alt": 949,
+    "postePublic": true
+  },
+  {
+    "id": "74208004",
+    "nom": "PASSY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.731667,
+    "lat": 45.951667,
+    "alt": 1300,
+    "postePublic": true
+  },
+  {
+    "id": "74208005",
+    "nom": "CHEDDE",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.73,
+    "lat": 45.923333,
+    "alt": 610,
+    "postePublic": true
+  },
+  {
+    "id": "74208006",
+    "nom": "PASSY CHEDDE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.693333,
+    "lat": 45.921667,
+    "alt": 609,
+    "postePublic": true
+  },
+  {
+    "id": "74211001",
+    "nom": "PERS-JUSSY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.266667,
+    "lat": 46.106667,
+    "alt": 580,
+    "postePublic": true
+  },
+  {
+    "id": "74211002",
+    "nom": "PERS JUSSY",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.2605,
+    "lat": 46.098,
+    "alt": 747,
+    "postePublic": true
+  },
+  {
+    "id": "74213001",
+    "nom": "POISY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.07,
+    "lat": 45.915,
+    "alt": 500,
+    "postePublic": true
+  },
+  {
+    "id": "74215400",
+    "nom": "PRAZ-SUR-ARLY -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.583667,
+    "lat": 45.801333,
+    "alt": 1950,
+    "postePublic": true
+  },
+  {
+    "id": "74221001",
+    "nom": "REPOSOIR (LE)",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.5355,
+    "lat": 46.011333,
+    "alt": 975,
+    "postePublic": true
+  },
+  {
+    "id": "74225001",
+    "nom": "RUMILLY",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.953333,
+    "lat": 45.848333,
+    "alt": 345,
+    "postePublic": true
+  },
+  {
+    "id": "74228001",
+    "nom": "MONT SION",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.086667,
+    "lat": 46.075,
+    "alt": 785,
+    "postePublic": true
+  },
+  {
+    "id": "74229001",
+    "nom": "SAINT-CERGUES LE BOURGEAU",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.321667,
+    "lat": 46.235,
+    "alt": 615,
+    "postePublic": true
+  },
+  {
+    "id": "74236001",
+    "nom": "SAINT-GERVAIS-LES-BAINS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.713333,
+    "lat": 45.886667,
+    "alt": 810,
+    "postePublic": true
+  },
+  {
+    "id": "74236002",
+    "nom": "MONT ARBOIS",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 6.669,
+    "lat": 45.855333,
+    "alt": 1833,
+    "postePublic": true
+  },
+  {
+    "id": "74236401",
+    "nom": "Prarion -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.7435,
+    "lat": 45.8795,
+    "alt": 1850,
+    "postePublic": true
+  },
+  {
+    "id": "74236404",
+    "nom": "MONT JOUX -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.6705,
+    "lat": 45.844667,
+    "alt": 1840,
+    "postePublic": true
+  },
+  {
+    "id": "74236405",
+    "nom": "MONT GEROUX",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.689333,
+    "lat": 45.836667,
+    "alt": 2026,
+    "postePublic": true
+  },
+  {
+    "id": "74238001",
+    "nom": "SAINT-JEAN-D'AULPS ECOLE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.656667,
+    "lat": 46.233333,
+    "alt": 805,
+    "postePublic": true
+  },
+  {
+    "id": "74238401",
+    "nom": "ROC D'ENFER -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.612833,
+    "lat": 46.199167,
+    "alt": 1800,
+    "postePublic": true
+  },
+  {
+    "id": "74239001",
+    "nom": "ST JEAN DE SIXT",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.41,
+    "lat": 45.921667,
+    "alt": 963,
+    "postePublic": true
+  },
+  {
+    "id": "74241001",
+    "nom": "ST JEOIRE",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.477,
+    "lat": 46.136667,
+    "alt": 535,
+    "postePublic": true
+  },
+  {
+    "id": "74242001",
+    "nom": "ST JORIOZ",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.153333,
+    "lat": 45.826667,
+    "alt": 460,
+    "postePublic": true
+  },
+  {
+    "id": "74243001",
+    "nom": "ST JULIEN",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.078333,
+    "lat": 46.145,
+    "alt": 462,
+    "postePublic": true
+  },
+  {
+    "id": "74252001",
+    "nom": "ST SIGISMOND",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.612167,
+    "lat": 46.076333,
+    "alt": 1020,
+    "postePublic": true
+  },
+  {
+    "id": "74256001",
+    "nom": "SALLANCHES",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.640333,
+    "lat": 45.931667,
+    "alt": 542,
+    "postePublic": true
+  },
+  {
+    "id": "74258002",
+    "nom": "SAMOENS",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.726667,
+    "lat": 46.086667,
+    "alt": 785,
+    "postePublic": true
+  },
+  {
+    "id": "74263001",
+    "nom": "SCIEZ",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.378333,
+    "lat": 46.331667,
+    "alt": 413,
+    "postePublic": true
+  },
+  {
+    "id": "74266001",
+    "nom": "SERVOZ",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.767333,
+    "lat": 45.931167,
+    "alt": 815,
+    "postePublic": true
+  },
+  {
+    "id": "74269001",
+    "nom": "SEYSSEL",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.85,
+    "lat": 45.963333,
+    "alt": 360,
+    "postePublic": true
+  },
+  {
+    "id": "74270001",
+    "nom": "SEYTHENEX SEYCHEUX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.296667,
+    "lat": 45.726667,
+    "alt": 732,
+    "postePublic": true
+  },
+  {
+    "id": "74270400",
+    "nom": "Seythenex",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.276333,
+    "lat": 45.713,
+    "alt": 1159,
+    "postePublic": true
+  },
+  {
+    "id": "74276001",
+    "nom": "TANINGES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.578333,
+    "lat": 46.108333,
+    "alt": 630,
+    "postePublic": true
+  },
+  {
+    "id": "74276002",
+    "nom": "TANINGES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.576667,
+    "lat": 46.1,
+    "alt": 630,
+    "postePublic": true
+  },
+  {
+    "id": "74280001",
+    "nom": "THONES",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.323,
+    "lat": 45.877833,
+    "alt": 630,
+    "postePublic": true
+  },
+  {
+    "id": "74281001",
+    "nom": "THONON-INRAE",
+    "posteOuvert": true,
+    "typePoste": 3,
+    "lon": 6.455,
+    "lat": 46.366667,
+    "alt": 376,
+    "postePublic": true
+  },
+  {
+    "id": "74281002",
+    "nom": "THONON",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.483333,
+    "lat": 46.366667,
+    "alt": 410,
+    "postePublic": true
+  },
+  {
+    "id": "74285001",
+    "nom": "USINENS",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.841667,
+    "lat": 46.008333,
+    "alt": 417,
+    "postePublic": true
+  },
+  {
+    "id": "74285002",
+    "nom": "USINENS SA",
+    "posteOuvert": true,
+    "typePoste": 1,
+    "lon": 5.8445,
+    "lat": 46.013,
+    "alt": 452,
+    "postePublic": true
+  },
+  {
+    "id": "74286001",
+    "nom": "VACHERESSE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.669833,
+    "lat": 46.316333,
+    "alt": 790,
+    "postePublic": true
+  },
+  {
+    "id": "74286400",
+    "nom": "VACHERESSE AUXI",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.673333,
+    "lat": 46.315333,
+    "alt": 790,
+    "postePublic": true
+  },
+  {
+    "id": "74289001",
+    "nom": "VALLIERES",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 5.921667,
+    "lat": 45.901667,
+    "alt": 309,
+    "postePublic": true
+  },
+  {
+    "id": "74290002",
+    "nom": "VALLORCINE_PLAN-DROIT",
+    "posteOuvert": false,
+    "typePoste": 2,
+    "lon": 6.919167,
+    "lat": 46.0205,
+    "alt": 1326,
+    "postePublic": true
+  },
+  {
+    "id": "74290003",
+    "nom": "VALLORCINE",
+    "posteOuvert": true,
+    "typePoste": 2,
+    "lon": 6.919167,
+    "lat": 46.0205,
+    "alt": 1326,
+    "postePublic": true
+  },
+  {
+    "id": "74290400",
+    "nom": "LES POSETTES",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 6.941167,
+    "lat": 46.019333,
+    "alt": 2200,
+    "postePublic": true
+  },
+  {
+    "id": "74292001",
+    "nom": "VAULX",
+    "posteOuvert": false,
+    "typePoste": 4,
+    "lon": 5.994667,
+    "lat": 45.918,
+    "alt": 520,
+    "postePublic": true
+  },
+  {
+    "id": "74310001",
+    "nom": "SEMNOZ",
+    "posteOuvert": false,
+    "typePoste": 3,
+    "lon": 6.11,
+    "lat": 45.801667,
+    "alt": 1666,
+    "postePublic": true
+  },
+  {
+    "id": "74310400",
+    "nom": "LE SEMNOZ",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.102,
+    "lat": 45.800167,
+    "alt": 1532,
+    "postePublic": true
+  },
+  {
+    "id": "74310401",
+    "nom": "LE SEMNOZ -S-",
+    "posteOuvert": true,
+    "typePoste": 4,
+    "lon": 6.101,
+    "lat": 45.801,
+    "alt": 1533,
+    "postePublic": true
+  }
+]
