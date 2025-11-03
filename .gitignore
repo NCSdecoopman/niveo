@@ -1,6 +1,14 @@
 # Local python virtualenv
 .venv/
+
 # Local secrets (do not commit)
 .secrets/
 .env
 .env.local
+
+# data MF locale
+data/
+
+# caches python
+__pycache__/
+*.pyc
