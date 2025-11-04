@@ -6,10 +6,17 @@
 .env
 .env.local
 
-# data
-data/
+# ignorer data par défaut
+data/**
+# garder le dossier metadonnees
+!data/metadonnees/
+# ignorer tout dans metadonnees...
+data/metadonnees/**
+# ...sauf stations.json
+!data/metadonnees/stations.json
 
 # python
 __pycache__/
 *.pyc
-*.log
+logs/**
+!logs/.gitkeep

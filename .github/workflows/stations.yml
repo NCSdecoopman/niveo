@@ -8,7 +8,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
   fetch-stations:
@@ -41,18 +41,32 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Ingest → DynamoDB
+      - name: Download date and export to DynamoDB
         run: |
           set -euxo pipefail
           python -u -m src.download.fetch_stations \
           | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
 
-      - name: Vérification après écriture
+      - name: Commit stations.json if changed
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          python - << 'PY'
-          import os,boto3; t=boto3.resource("dynamodb").Table("Stations")
-          print(t.get_item(Key={"id":38002401}, ConsistentRead=True).get("Item"))
-          PY
+          set -eux
+          # identité bot
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Compter grossièrement (scan limité)
-          aws dynamodb scan --table-name Stations --select COUNT
+          # ne commit que s'il y a un diff
+          git add -N data/metadonnees/stations.json
+          git diff --quiet -- data/metadonnees/stations.json && exit 0
+
+          git add data/metadonnees/stations.json
+          git commit -m "chore(stations): refresh stations.json [skip ci]"
+          git push
+
+      - name: Upload logs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: stations-logs-${{ github.run_id }}
+          path: logs/stations/*.log
+          if-no-files-found: warn
+          retention-days: 14
