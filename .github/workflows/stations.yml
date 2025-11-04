@@ -41,9 +41,20 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Fetch stations → DynamoDB (pipe)
+      - name: Fetch → validate → count → upload (no files)
+        shell: bash
+        env:
+          PYTHONUNBUFFERED: "1"
         run: |
-          python -m src.download.fetch_stations \
+          set -euo pipefail
+
+          python -u -m src.download.fetch_stations \
             --scales "quotidienne" \
             --departments "38,73,74" \
-          | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
+            --emit ndjson \
+          | stdbuf -oL -eL jq -c -e 'if (type=="object" and has("id")) then . else error("invalid NDJSON line") end' \
+          | awk '{print; n++} END{printf "LINES=%d\n", n > "/dev/stderr"; if(n==0){exit 1}}' \
+          | tee >(awk 'NR<=5{print > "/dev/stderr"}') \
+          | python -u -m src.upload.stdin_to_dynamodb --table Stations --pk id
+
+
