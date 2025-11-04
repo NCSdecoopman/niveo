@@ -106,16 +106,18 @@ jobs:
           | stdbuf -oL -eL python -u -m src.upload.stdin_to_dynamodb \
               --table Observations --pk id --sk date
 
-
-      # Versionner les manquants
-      - name: Commit missing_observations.json if changed
+     - name: Commit missing_observations.json if changed
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           set -eux
+          # identité bot
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # ne commit que s'il y a un diff
           git add -N data/metadonnees/missing_observations.json
           git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
+
           git add data/metadonnees/missing_observations.json
-          git commit -m "chore(obs): update missing_observations.json [skip ci]"
+          git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
           git push

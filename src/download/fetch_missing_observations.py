@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# fetch_missing_observations.py
 # Relance ciblée des observations manquantes.
 # - Lit un JSON de la forme [{"id": 38002401, "date": "YYYY-MM-DD"}, ...]
 # - Pour chaque (id, date), appelle fetch_observations.py avec --id et --date

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# cleanup_missing_observations.py
 # Supprime les entrées (id, date[, reason]) de missing_observations.json plus vieilles que N jours.
 # - Par défaut N=11.
 # - Dates attendues au format 'YYYY-MM-DD' (UTC ou local, peu importe, c'est une date civile).
