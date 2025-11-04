@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       days_back:
-        description: "J-X (1 par défaut) pour lancer manuellement J-10, J-6 etc."
+        description: "J-X (1 par défaut) pour lancer manuellement J-10, J-6, etc."
         required: false
         default: "1"
 
@@ -21,11 +21,11 @@ jobs:
     env:
       AWS_REGION: ${{ secrets.AWS_REGION }}
       MF_BASIC_AUTH_B64: ${{ secrets.MF_BASIC_AUTH_B64 }}
-      METEO_TOKEN_CACHE: ${{ runner.temp }}/mf_token.json
+      METEO_TOKEN_CACHE: ${{ github.workspace }}/.cache/mf_token.json
+      METEO_MAX_RPM: '50'
     steps:
       - uses: actions/checkout@v4
 
-      # ne bloque que les schedules; manuel toujours autorisé
       - name: Gate by local time Europe/Paris
         if: ${{ github.event_name == 'schedule' }}
         run: .github/scripts/should_run.sh daily-07:00
@@ -56,6 +56,8 @@ jobs:
         run: |
           python -m src.download.fetch_observations \
             --date "${{ steps.date.outputs.YMD }}" \
+            --stations data/metadonnees/stations.json \
+            --logdir logs/observations \
           | python -m src.upload.stdin_to_dynamodb \
               --table Observations --pk id --sk date
 
@@ -66,5 +68,8 @@ jobs:
       - name: Retry missing → DynamoDB (pipe)
         run: |
           python -m src.download.fetch_missing_observations \
+            --missing data/metadonnees/missing_observations.json \
+            --stations data/metadonnees/stations.json \
+            --logdir logs/observations \
           | python -m src.upload.stdin_to_dynamodb \
               --table Observations --pk id --sk date

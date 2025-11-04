@@ -13,16 +13,15 @@ permissions:
 jobs:
   fetch-stations:
     runs-on: ubuntu-latest
-    # Variables d'env pour tout le job
     env:
       AWS_REGION: ${{ secrets.AWS_REGION }}
-      MF_BASIC_AUTH_B64: ${{ secrets.MF_BASIC_AUTH_B64 }} # base64(id:secret)
-      METEO_TOKEN_CACHE: ${{ runner.temp }}/mf_token.json
-      ALT_SELECT: '1000' # selection de l'altitude minimale des stations
+      MF_BASIC_AUTH_B64: ${{ secrets.MF_BASIC_AUTH_B64 }}
+      METEO_TOKEN_CACHE: ${{ github.workspace }}/.cache/mf_token.json
+      METEO_MAX_RPM: '50'
+      ALT_SELECT: '1000'
     steps:
       - uses: actions/checkout@v4
 
-      # Ne bloque que les exécutions CRON, pas les run manuels
       - name: Gate by local time Europe/Paris
         if: ${{ github.event_name == 'schedule' }}
         run: .github/scripts/should_run.sh fri-23:59
@@ -44,8 +43,6 @@ jobs:
       - name: Fetch stations → DynamoDB (pipe)
         run: |
           python -m src.download.fetch_stations \
-            --scales "quotidienne" \ 
+            --scales "quotidienne" \
             --departments "38,73,74" \
           | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
-      
-      # autre scales ",horaire,infrahoraire-6m"
