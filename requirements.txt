@@ -3,3 +3,4 @@ uvicorn[standard]==0.22.0
 requests==2.31.0
 python-dotenv==1.1.1
 python-dateutil==2.9.0.post0
+boto3==1.40.65
