@@ -244,14 +244,15 @@ permissions:
 ## Logique
 
 1. Calcule la date cible J-X (`steps.date.outputs.YMD`)
-2. `fetch_observations.py` produit le CSV sur stdout
-   → dupliqué localement avec `tee`
-   → envoyé en flux vers DynamoDB (`stdin_to_dynamodb --table Observations --pk id --sk date`)
-3. Archive du CSV et des logs en artefacts
-4. Nettoyage du registre `missing_observations.json` (par défaut conserve 11 jours)
-5. Relance ciblée des manquants via `fetch_missing_observations.py`
+2. Nettoyage du registre `missing_observations.json` (par défaut conserve 11 jours)
+3. Relance ciblée des manquants via `fetch_missing_observations.py`
    → nouveau CSV envoyé en flux vers DynamoDB
    → mise à jour atomique de `missing_observations.json`
+4. `fetch_observations.py` produit le CSV sur stdout
+   → dupliqué localement avec `tee`
+   → envoyé en flux vers DynamoDB (`stdin_to_dynamodb --table Observations --pk id --sk date`)
+5. Archive du CSV et des logs en artefacts
+
 
 ## Table DynamoDB
 
@@ -259,6 +260,9 @@ permissions:
 * Partition key : `id`
 * Sort key : `date` (timestamp strict du record)
 * Mode : idempotent. Même `(id,date)` fait un overwrite propre.
+
+Toutes les écritures vers DynamoDB ajoutent également l’attribut `expires_at` (Unix epoch seconds) ce qui active la purge automatique à J+11 via TTL DynamoDB. Aucun workflow supplémentaire côté AWS n’est nécessaire pour la suppression des anciennes observations.
+
 
 ## Flux de données
 

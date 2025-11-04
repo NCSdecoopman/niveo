@@ -57,7 +57,26 @@ jobs:
           [ -z "$DBACK" ] && DBACK="1"
           echo "YMD=$(date -u -d "$DBACK days ago" +%F)" >> $GITHUB_OUTPUT
 
-      - name: Fetch J-X upload to DynamoDB (pipe) + tee CSV
+      - name: Cleanup missing registry (keep 11 days)
+        run: |
+          python -m src.maintenance.cleanup_missing_observations --days 11
+
+      - name: Fetch missing observations to DynamoDB (pipe)
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p logs/observations_missing
+          python -m src.download.fetch_missing_observations \
+            --missing data/metadonnees/missing_observations.json \
+            --stations data/metadonnees/stations.json \
+            --logdir logs/observations_missing \
+            --soft-exit
+          | tee logs/observations_missing/jx-${{ steps.date.outputs.YMD }}.csv \
+          | tee /dev/stderr \
+          | python -u -m src.upload.stdin_to_dynamodb \
+              --table Observations --pk id --sk date
+
+      - name: Fetch J-X upload to DynamoDB (pipe with delete after 11 days in AWS)
         run: |
           set -euxo pipefail
           mkdir -p logs/observations
@@ -68,7 +87,7 @@ jobs:
           | tee logs/observations/jx-${{ steps.date.outputs.YMD }}.csv \
           | tee /dev/stderr \
           | python -u -m src.upload.stdin_to_dynamodb \
-              --table Observations --pk id --sk date
+              --table Observations --pk id --sk date --ttl-days 11
 
       - name: Upload logs + CSV as artifacts
         uses: actions/upload-artifact@v4
@@ -77,36 +96,12 @@ jobs:
           path: |
             logs/observations/*.log
             logs/observations/*.csv
+            logs/observations_missing/*.log
+            logs/observations_missing/*.csv
           if-no-files-found: warn
           retention-days: 14
 
-      - name: Cleanup missing registry (keep 11 days)
-        run: |
-          python -m src.maintenance.cleanup_missing_observations --days 11
-
-      - name: Fetch J-X → DynamoDB (pipe) + live output
-        shell: bash
-        run: |
-          set -euxo pipefail
-          mkdir -p logs/observations
-
-          # Stream live les logs du script vers la console
-          ( tail -n +1 -F --retry logs/observations/*.log 2>/dev/null || true ) &
-          TAIL_PID=$!
-          trap 'kill $TAIL_PID || true' EXIT
-
-          # Force unbuffered + line-buffered
-          export PYTHONUNBUFFERED=1
-          stdbuf -oL -eL python -u -m src.download.fetch_observations \
-            --date "${{ steps.date.outputs.YMD }}" \
-            --stations data/metadonnees/stations.json \
-            --logdir logs/observations \
-          | tee logs/observations/jx-${{ steps.date.outputs.YMD }}.csv \
-          | stdbuf -oL -eL tee /dev/stderr \
-          | stdbuf -oL -eL python -u -m src.upload.stdin_to_dynamodb \
-              --table Observations --pk id --sk date
-
-     - name: Commit missing_observations.json if changed
+      - name: Commit missing_observations.json if changed
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           set -eux

@@ -153,10 +153,11 @@ def main():
     ap.add_argument("--stations", type=Path, default=DEFAULT_STATIONS, help="Chemin du stations.json combiné")
     ap.add_argument("--logdir", type=Path, default=DEFAULT_LOGDIR, help="Répertoire des logs pour fetch_observations")
     ap.add_argument("--dry-run", action="store_true", help="N'écrit pas le JSON, affiche seulement le CSV agrégé")
+    ap.add_argument("--soft-exit", action="store_true", help="Toujours retourner 0 même s'il reste des manquants")
     args = ap.parse_args()
 
     rc = fetch_all(args.missing, args.stations, args.logdir, dry_run=args.dry_run)
-    sys.exit(rc)
+    sys.exit(0 if args.soft_exit else rc)
 
 if __name__ == "__main__":
     main()
