@@ -35,6 +35,14 @@ def main():
     ap.add_argument("--sk")                   # ex: date
     args = ap.parse_args()
 
+    if sys.stdin.isatty():
+        print("ERROR: no stdin", file=sys.stderr)
+        sys.exit(2)
+    lines = [l for l in sys.stdin if l.strip()]
+    if not lines:
+        print("ERROR: 0 input lines", file=sys.stderr)
+        sys.exit(3)
+
     ddb = boto3.resource("dynamodb")
     table = ddb.Table(args.table)
 
