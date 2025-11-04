@@ -41,25 +41,13 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Génère le CSV des stations
-        run: |
-          set -euxo pipefail
-          python -u -m src.download.fetch_stations | tee stations.csv
-          # fail si vide ou seulement l'en-tête
-          n=$(wc -l < stations.csv)
-          test "$n" -gt 1
-
-      - name: Sanity check CSV
-        run: |
-          set -euxo pipefail
-          head -n 5 stations.csv
-          tail -n +2 stations.csv | head -n 5 | cat -A
-          echo "rows=$(($(wc -l < stations.csv)-1))"
-
       - name: Ingest → DynamoDB
         run: |
           set -euxo pipefail
-          tail -n +2 stations.csv \
-            | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
+          python -u -m src.download.fetch_stations | tee stations.csv
+          test $(wc -l < stations.csv) -gt 1
+          cat stations.csv | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
+
+
 
 
