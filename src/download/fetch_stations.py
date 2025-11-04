@@ -1,7 +1,8 @@
-# src/api/fetch_stations_all_scales.py
+# src/download/fetch_stations_all_scales.py
 # Récupère les listes de stations par département pour 3 échelles (DPClim).
 # Flux: secrets → mf_auth → cache → token_provider → scripts => API.
 
+import argparse
 import os, json, time
 from pathlib import Path
 from typing import Dict, List, Union
@@ -135,8 +136,33 @@ def fetch_all_scales_all_departments(
     return results
 
 if __name__ == "__main__":
-    # Exécution directe simple
-    res = fetch_all_scales_all_departments()
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--scales",
+        type=lambda s: [x.strip() for x in s.split(",")],
+        default=["quotidienne"],
+        help="liste échelles séparées par virgule, ex: quotidienne,horaire"
+    )
+
+    parser.add_argument(
+        "--departments",
+        type=lambda s: [int(x) for x in s.split(",")],
+        default=[38,73,74],
+        help="liste départements séparés par virgule, ex: 38,73,74"
+    )
+
+    args = parser.parse_args()
+
+    # validation scales
+    for s in args.scales:
+        if s not in SCALES:
+            raise ValueError(f"scale invalide: {s} attendu ∈ {list(SCALES.keys())}")
+
+    scales = args.scales
+    departments = args.departments
+
+    res = fetch_all_scales_all_departments(departments=departments, scales=scales)
     for scale, per_dept in res.items():
         for dept, data in per_dept.items():
             if isinstance(data, dict) and "error" in data:
@@ -144,10 +170,7 @@ if __name__ == "__main__":
             else:
                 n = len(data) if isinstance(data, list) else "unknown"
                 print(f"[{scale}] Dept {dept}: saved -> {SAVE_DIR}/{scale}/stations_{dept}.json (items: {n})")
-
-    # Lancement du combineur après les téléchargements
     try:
-        combine_stations()  # agrège et filtre alt > 500 m
+        combine_stations()
     except Exception as e:
-        # log court et non bloquant
         print(f"[combine] error: {e}")

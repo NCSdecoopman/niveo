@@ -1,4 +1,4 @@
-# src/api/combine_stations.py
+# src/utils/combine_stations.py
 # Script: combine all stations JSON (different scales/depts) into one deduplicated file.
 
 import json
