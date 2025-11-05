@@ -93,6 +93,25 @@ jobs:
           | python -u -m src.upload.stdin_to_dynamodb \
               --table Observations --pk id --sk date --ttl-days 11
 
+      - name: Commit missing_observations.json if changed
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          set -eux
+          # identité bot
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # marque l’intention d’ajout même si ignoré
+          git add -N -f data/metadonnees/missing_observations.json || true
+
+          # quitte si pas de diff
+          git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
+
+          # ajoute réellement pour commit CI
+          git add -f data/metadonnees/missing_observations.json
+          git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
+          git push
+
       - name: Upload logs + CSV as artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -103,16 +122,4 @@ jobs:
             logs/observations_missing/*.log
             logs/observations_missing/*.csv
           if-no-files-found: warn
-          retention-days: 14
-
-      - name: Commit missing_observations.json if changed
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          set -eux
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -N data/metadonnees/missing_observations.json
-          git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
-          git add data/metadonnees/missing_observations.json
-          git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
-          git push
+          retention-days: 10

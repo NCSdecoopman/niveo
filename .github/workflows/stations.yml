@@ -54,11 +54,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # ne commit que s'il y a un diff
-          git add -N data/metadonnees/stations.json
+          # marque l’intention d’ajout même si ignoré
+          git add -N -f data/metadonnees/stations.json || true
+
+          # quitte si pas de diff
           git diff --quiet -- data/metadonnees/stations.json && exit 0
 
-          git add data/metadonnees/stations.json
+          # ajoute réellement pour commit CI
+          git add -f data/metadonnees/stations.json
           git commit -m "chore(stations): refresh stations.json [skip ci]"
           git push
 
