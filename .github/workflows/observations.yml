@@ -3,7 +3,6 @@ name: Observations Daily
 on:
   schedule:
     - cron: '0 6 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
-
     - cron: '0 7 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
     - cron: '0 8 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
     - cron: '0 9 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
@@ -60,8 +59,8 @@ jobs:
           [ -z "$DBACK" ] && DBACK="1"
           echo "YMD=$(date -u -d "$DBACK days ago" +%F)" >> "$GITHUB_OUTPUT"
 
-      # - name: Cleanup missing registry (keep 11 days)
-      #   run: python -m src.maintenance.cleanup_missing_observations --days 11
+      - name: Cleanup missing registry (keep 11 days)
+        run: python -m src.maintenance.cleanup_missing_observations --days 11
 
       # - name: Fetch missing observations to DynamoDB (pipe)
       #   shell: bash
@@ -105,14 +104,14 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-      # - name: Commit missing_observations.json if changed
-      #   if: ${{ github.ref == 'refs/heads/main' }}
-      #   run: |
-      #     set -eux
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git add -N data/metadonnees/missing_observations.json
-      #     git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
-      #     git add data/metadonnees/missing_observations.json
-      #     git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
-      #     git push
+      - name: Commit missing_observations.json if changed
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          set -eux
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -N data/metadonnees/missing_observations.json
+          git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
+          git add data/metadonnees/missing_observations.json
+          git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
+          git push

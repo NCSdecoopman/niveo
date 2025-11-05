@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # fetch_missing_observations.py
-# Relance ciblée des observations manquantes.
-# - Lit un JSON de la forme [{"id": 38002401, "date": "YYYY-MM-DD"}, ...]
-# - Pour chaque (id, date), appelle fetch_observations.py avec --id et --date
-# - Agrège toutes les lignes CSV sur stdout avec un seul header
-# - Si au moins une ligne utile est retournée (date non vide), retire l'entrée du JSON
-# - Ecriture atomique du JSON nettoyé
-#
-# Dépendances: Python 3.9+, le module/cli fetch_observations.py existant
+# Relance ciblée des observations manquantes au format groupé:
+# [{"id": 38002401, "dates": ["YYYY-MM-DD", ...]}, ...]
+# - Ne traite que les ids ayant ≤ --max-dates-per-id dates (défaut 3)
+# - Appelle fetch_observations.py pour chaque (id,date) éligible
+# - Agrège un seul header CSV sur stdout
+# - Retire uniquement la date résolue ; supprime l'id si plus de dates
+# - Écriture atomique du JSON
 
 import os
 import sys
@@ -17,7 +16,7 @@ import argparse
 import tempfile
 import subprocess
 from pathlib import Path
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple
 
 DEFAULT_MISSING = Path(os.getenv("MISSING_OBS_JSON", "data/metadonnees/missing_observations.json"))
 DEFAULT_STATIONS = Path(os.getenv("STATIONS_JSON", "data/metadonnees/stations.json"))
@@ -25,36 +24,47 @@ DEFAULT_LOGDIR = Path(os.getenv("OBS_LOGDIR", "logs/observations"))
 
 # --- I/O helpers -----------------------------------------------------------
 
-def _read_missing(path: Path) -> List[Dict[str, Any]]:
+def _read_missing_grouped(path: Path) -> List[Dict[str, Any]]:
+    """Lit {id, dates:[...]} → liste normalisée triée, dates dédupliquées."""
     if not path.exists():
         return []
     try:
         with path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-        if not isinstance(data, list):
-            return []
-        # déduplication sur (id,date)
-        seen = set()
-        out = []
-        for e in data:
-            try:
-                k = (int(e.get("id")), str(e.get("date")))
-            except Exception:
-                continue
-            if not k[1]:
-                continue
-            if k in seen:
-                continue
-            seen.add(k)
-            out.append({"id": k[0], "date": k[1], **({} if "reason" not in e else {"reason": e["reason"]})})
-        return out
     except Exception:
         return []
 
-def _atomic_write_json(path: Path, data: List[Dict[str, Any]]) -> None:
+    out: List[Dict[str, Any]] = []
+    if not isinstance(data, list):
+        return out
+
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        if "id" not in item or "dates" not in item or not isinstance(item["dates"], list):
+            continue
+        try:
+            sid = int(item["id"])
+        except Exception:
+            continue
+        dates = sorted({str(d).strip() for d in item["dates"] if str(d).strip()})
+        if dates:
+            out.append({"id": sid, "dates": dates})
+    out.sort(key=lambda e: e["id"])
+    return out
+
+def _atomic_write_json_grouped(path: Path, grouped: List[Dict[str, Any]]) -> None:
+    """Écrit proprement la liste {id, dates:[...]}, en supprimant les entrées vides."""
+    cleaned = []
+    for e in grouped:
+        dates = [d for d in e.get("dates", []) if str(d).strip()]
+        if dates:
+            cleaned.append({"id": int(e["id"]), "dates": sorted(set(dates))})
+    cleaned.sort(key=lambda x: x["id"])
+
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile("w", delete=False, encoding="utf-8", dir=str(path.parent)) as tmp:
-        json.dump(data, tmp, ensure_ascii=False, indent=2)
+        json.dump(cleaned, tmp, ensure_ascii=False, indent=2)
         tmp.flush()
         os.fsync(tmp.fileno())
         tmp_name = tmp.name
@@ -63,12 +73,7 @@ def _atomic_write_json(path: Path, data: List[Dict[str, Any]]) -> None:
 # --- Core ------------------------------------------------------------------
 
 def _run_fetch_observations(date_str: str, station_id: int, stations_path: Path, logdir: Path) -> Tuple[bool, List[List[str]]]:
-    """
-    Lance `python -m src.download.fetch_observations --date ... --id ...`
-    Retourne (success, rows) où rows inclut header+rows CSV renvoyés par le sous-process.
-    success=True si au moins une ligne data avec colonne date non vide est présente.
-    """
-    # Important: on invoque via -m pour utiliser l'import package.
+    """Exécute src.download.fetch_observations et renvoie (success, rows CSV)."""
     cmd = [
         sys.executable,
         "-m", "src.download.fetch_observations",
@@ -84,79 +89,89 @@ def _run_fetch_observations(date_str: str, station_id: int, stations_path: Path,
         sys.stderr.write(f"[spawn] échec lancement fetch_observations: {repr(ex)}\n")
         return False, []
 
-    if proc.returncode not in (0,):
-        # Même en cas d'erreur, tenter de lire ce qui a été produit sur stdout
-        if proc.stderr:
-            sys.stderr.write(proc.stderr)
-    out = proc.stdout.strip().splitlines()
-    if not out:
+    if proc.returncode != 0 and proc.stderr:
+        sys.stderr.write(proc.stderr)
+
+    lines = [ln for ln in proc.stdout.splitlines() if ln.strip()]
+    if not lines:
         return False, []
 
-    # Parse CSV en mémoire
-    reader = csv.reader(out)
+    reader = csv.reader(lines)
     rows = [row for row in reader]
     if not rows:
         return False, []
 
-    # rows[0] = header attendu: id,date,...
-    # Si une ligne a une date non vide en col 1, on considère success
-    success = any((len(r) >= 2 and r[1].strip() != "" ) for r in rows[1:])
+    # success si une data row possède une date non vide en col 1
+    success = any((len(r) >= 2 and r[1].strip() != "") for r in rows[1:])
     return success, rows
 
-def fetch_all(missing_path: Path, stations_path: Path, logdir: Path, dry_run: bool=False) -> int:
-    items = _read_missing(missing_path)
+def fetch_all(missing_path: Path, stations_path: Path, logdir: Path,
+              dry_run: bool=False, max_dates_per_id: int=3) -> int:
+    """Traite uniquement les ids avec ≤ max_dates_per_id dates."""
+    items = _read_missing_grouped(missing_path)
     if not items:
-        # Rien à faire, mais on émet quand même un header CSV standard minimal
-        # Laisser fetch_observations gérer le header? Ici on sort rien.
         return 0
 
-    # Un seul header sur stdout
+    # Filtrage des ids éligibles
+    eligible_ids = {e["id"] for e in items if len(e["dates"]) <= max_dates_per_id}
+
+    # Liste mutable pour MAJ du JSON
+    remaining = [{ "id": e["id"], "dates": list(e["dates"]) } for e in items]
+
+    # Plan de travail: seulement les éligibles
+    work: List[Tuple[int, str]] = []
+    for e in items:
+        if e["id"] not in eligible_ids:
+            continue
+        for d in e["dates"]:
+            work.append((e["id"], d))
+    work.sort(key=lambda x: (x[0], x[1]))
+
     header_written = False
     writer = csv.writer(sys.stdout, lineterminator="\n")
-    remaining: List[Dict[str, Any]] = []
 
-    for e in items:
-        try:
-            sid = int(e["id"])
-            date_str = str(e["date"])
-        except Exception:
-            # entrée corrompue -> on la supprime silencieusement
-            continue
-
+    for sid, date_str in work:
         ok, rows = _run_fetch_observations(date_str, sid, stations_path, logdir)
 
         if rows:
-            # Écrit le header une seule fois
             if not header_written:
                 writer.writerow(rows[0])
                 header_written = True
-            # Écrit toutes les data rows (sans réécrire le header)
             for r in rows[1:]:
                 writer.writerow(r)
 
-        if not ok:
-            # On conserve l'entrée si échec
-            remaining.append(e)
+        if ok:
+            # Retire uniquement la date résolue pour cet id
+            for ent in remaining:
+                if ent["id"] == sid and date_str in ent["dates"]:
+                    ent["dates"].remove(date_str)
+                    break
 
-    # Écrit le JSON mis à jour si pas dry-run
+    # Nettoyage + tri
+    remaining = [{"id": ent["id"], "dates": sorted(set(ent["dates"]))} for ent in remaining if ent["dates"]]
+
+    # Écriture JSON sauf en dry-run
     if not dry_run:
-        _atomic_write_json(missing_path, remaining)
+        _atomic_write_json_grouped(missing_path, remaining)
 
-    # Retourne code: 0 si tout résolu, 1 si il reste des manquants
+    # Code retour: 0 si tout résolu, 1 s'il reste des manquants
     return 0 if len(remaining) == 0 else 1
 
 # --- CLI -------------------------------------------------------------------
 
 def main():
-    ap = argparse.ArgumentParser(description="Récupère les observations listées dans missing_observations.json")
-    ap.add_argument("--missing", type=Path, default=DEFAULT_MISSING, help="Chemin du JSON des observations manquantes")
-    ap.add_argument("--stations", type=Path, default=DEFAULT_STATIONS, help="Chemin du stations.json combiné")
-    ap.add_argument("--logdir", type=Path, default=DEFAULT_LOGDIR, help="Répertoire des logs pour fetch_observations")
-    ap.add_argument("--dry-run", action="store_true", help="N'écrit pas le JSON, affiche seulement le CSV agrégé")
-    ap.add_argument("--soft-exit", action="store_true", help="Toujours retourner 0 même s'il reste des manquants")
+    ap = argparse.ArgumentParser(description="Récupère les observations manquantes (format groupé).")
+    ap.add_argument("--missing", type=Path, default=DEFAULT_MISSING)
+    ap.add_argument("--stations", type=Path, default=DEFAULT_STATIONS)
+    ap.add_argument("--logdir", type=Path, default=DEFAULT_LOGDIR)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--soft-exit", action="store_true")
+    ap.add_argument("--max-dates-per-id", type=int, default=3,
+                    help="Ne traiter que les ids ayant ≤ N dates (défaut: 3)")
     args = ap.parse_args()
 
-    rc = fetch_all(args.missing, args.stations, args.logdir, dry_run=args.dry_run)
+    rc = fetch_all(args.missing, args.stations, args.logdir,
+                   dry_run=args.dry_run, max_dates_per_id=args.max_dates_per_id)
     sys.exit(0 if args.soft_exit else rc)
 
 if __name__ == "__main__":
