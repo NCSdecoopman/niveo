@@ -14,7 +14,7 @@ on:
       days_back:
         description: "J-X (1 by default). Use to launch manually at J-10, J-6, etc."
         required: false
-        default: "1"
+        default: "0"
 
 concurrency:
   group: observations-daily
