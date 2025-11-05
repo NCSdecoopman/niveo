@@ -2,8 +2,7 @@ name: Observations Daily
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # ~07:00 Europe/Paris summer (UTC+2)
-    - cron: '0 6 * * *'  # ~07:00 Europe/Paris winter (UTC+1)
+    - cron: '0 6 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
   workflow_dispatch:
     inputs:
       days_back:
@@ -30,10 +29,6 @@ jobs:
       PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Gate by local time Europe/Paris
-        if: ${{ github.event_name == 'schedule' }}
-        run: .github/scripts/should_run.sh daily-07:00
 
       - uses: actions/setup-python@v5
         with:

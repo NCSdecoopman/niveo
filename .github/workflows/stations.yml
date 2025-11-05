@@ -2,8 +2,7 @@ name: Stations Weekly
 
 on:
   schedule:
-    - cron: '59 21 * * 5'
-    - cron: '59 22 * * 5'
+    - cron: '0 6 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
   workflow_dispatch: {}
 
 concurrency:
@@ -25,10 +24,6 @@ jobs:
       ALT_SELECT: '1000'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Gate by local time Europe/Paris
-        if: ${{ github.event_name == 'schedule' }}
-        run: .github/scripts/should_run.sh fri-23:59
 
       - uses: actions/setup-python@v5
         with:
