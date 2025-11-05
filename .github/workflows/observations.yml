@@ -53,25 +53,25 @@ jobs:
           [ -z "$DBACK" ] && DBACK="1"
           echo "YMD=$(date -u -d "$DBACK days ago" +%F)" >> "$GITHUB_OUTPUT"
 
-      # - name: Cleanup missing registry (keep 11 days)
-      #   run: python -m src.maintenance.cleanup_missing_observations --days 11
+      - name: Cleanup missing registry (keep 11 days)
+        run: python -m src.maintenance.cleanup_missing_observations --days 11
 
-      # - name: Fetch missing observations to DynamoDB (pipe)
-      #   shell: bash
-      #   run: |
-      #     set -euxo pipefail
-      #     mkdir -p logs/observations_missing
-      #     (
-      #       python -m src.download.fetch_missing_observations \
-      #         --missing data/metadonnees/missing_observations.json \
-      #         --stations data/metadonnees/stations.json \
-      #         --max-dates-per-id 1 \
-      #         --logdir logs/observations_missing \
-      #         --soft-exit
-      #     ) | tee "logs/observations_missing/jx-${{ steps.date.outputs.YMD }}.csv" \
-      #       | tee /dev/stderr \
-      #       | python -u -m src.upload.stdin_to_dynamodb \
-      #           --table Observations --pk id --sk date --allow-empty
+      - name: Fetch missing observations to DynamoDB (pipe)
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p logs/observations_missing
+          (
+            python -m src.download.fetch_missing_observations \
+              --missing data/metadonnees/missing_observations.json \
+              --stations data/metadonnees/stations.json \
+              --max-dates-per-id 1 \
+              --logdir logs/observations_missing \
+              --soft-exit
+          ) | tee "logs/observations_missing/jx-${{ steps.date.outputs.YMD }}.csv" \
+            | tee /dev/stderr \
+            | python -u -m src.upload.stdin_to_dynamodb \
+                --table Observations --pk id --sk date --allow-empty
 
       - name: Fetch J-X to DynamoDB (pipe with TTL=11 days)
         shell: bash
@@ -87,24 +87,24 @@ jobs:
           | python -u -m src.upload.stdin_to_dynamodb \
               --table Observations --pk id --sk date --ttl-days 11
 
-      # - name: Commit missing_observations.json if changed
-      #   if: ${{ github.ref == 'refs/heads/main' }}
-      #   run: |
-      #     set -eux
-      #     # identité bot
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Commit missing_observations.json if changed
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          set -eux
+          # identité bot
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      #     # marque l’intention d’ajout même si ignoré
-      #     git add -N -f data/metadonnees/missing_observations.json || true
+          # marque l’intention d’ajout même si ignoré
+          git add -N -f data/metadonnees/missing_observations.json || true
 
-      #     # quitte si pas de diff
-      #     git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
+          # quitte si pas de diff
+          git diff --quiet -- data/metadonnees/missing_observations.json && exit 0
 
-      #     # ajoute réellement pour commit CI
-      #     git add -f data/metadonnees/missing_observations.json
-      #     git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
-      #     git push
+          # ajoute réellement pour commit CI
+          git add -f data/metadonnees/missing_observations.json
+          git commit -m "chore(stations): refresh missing_observations.json [skip ci]"
+          git push
 
       - name: Upload logs + CSV as artifacts
         uses: actions/upload-artifact@v4
