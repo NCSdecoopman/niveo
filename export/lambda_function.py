@@ -142,7 +142,7 @@ def lambda_handler(event, context):
 
     # 5) Commits
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    commit_msg = f"chore(observations): export daily {today} UTC"
+    commit_msg = f"chore(observations): export daily {today} [skip ci]"
 
     if size_mb <= max_mb:
         sha = _github_get_sha(gh_owner, gh_repo, gh_path, headers, gh_branch)
