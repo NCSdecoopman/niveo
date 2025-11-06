@@ -12,4 +12,12 @@ data/**
 # python
 __pycache__/
 *.pyc
-**.log
+*.log
+*.tmp
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+lambda.zip
+out.json
