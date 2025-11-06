@@ -64,13 +64,6 @@ def _github_headers(token):
         "X-GitHub-Api-Version": "2022-11-28",
         "User-Agent": "lambda-ddb-exporter"
     }
-
-
-def _gh_whoami(headers):
-    import urllib.request, json
-    req = urllib.request.Request("https://api.github.com/user", headers=headers, method="GET")
-    with urllib.request.urlopen(req) as r:
-        return json.load(r)
     
 
 def _github_get_sha(owner, repo, path, headers, branch):
@@ -132,13 +125,6 @@ def lambda_handler(event, context):
     # 4) Token GitHub
     token = _get_secret_value(gh_token_arn)
     headers = _github_headers(token)
-
-    try:
-        me = _gh_whoami(headers)
-        print(f"GH whoami: {me.get('login')}")
-    except Exception as e:
-        print(f"GH whoami failed: {e}")
-
 
     # 5) Commits
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
