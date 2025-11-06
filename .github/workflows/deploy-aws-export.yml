@@ -5,6 +5,9 @@ on:
     branches: [ main ]
     paths:
       - "export/**"
+      - ".github/workflows/deploy-export.yml"
+    paths-ignore:
+      - "export/lambda.zip"
   workflow_dispatch: {}
 
 permissions:
@@ -24,12 +27,26 @@ jobs:
         working-directory: export
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cache Terraform plugins and .terraform
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.terraform.d/plugin-cache
+            export/.terraform
+          key: ${{ runner.os }}-tf-${{ hashFiles('export/.terraform.lock.hcl') }}
+          restore-keys: |
+            ${{ runner.os }}-tf-
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.13.5
+          terraform_wrapper: false
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
@@ -37,19 +54,27 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Terraform init
-        run: terraform init
+      - name: Package Lambda
+        run: |
+          rm -f lambda.zip
+          # code pur
+          zip -r9 lambda.zip lambda_function.py >/dev/null
+          # dépendances optionnelles vendored (ex: ./python/)
+          if [ -d "python" ]; then (cd python && zip -r9 ../lambda.zip . >/dev/null); fi
 
-      # Optionnel: fmt + validate
+      - name: Terraform init
+        run: terraform init -input=false
+
       - name: Terraform fmt
-        run: terraform fmt -check
+        run: terraform fmt -check -recursive
+
       - name: Terraform validate
         run: terraform validate
 
       - name: Terraform plan
         run: |
-          terraform plan \
-            -var="aws_region=eu-west-3" \
+          terraform plan -input=false -out=tfplan \
+            -var="aws_region=${{ secrets.AWS_REGION }}" \
             -var="table_name=Observations" \
             -var="repo_owner=NCSdecoopman" \
             -var="repo_name=SnowViz" \
@@ -58,11 +83,4 @@ jobs:
 
       - name: Terraform apply (main only)
         if: github.ref == 'refs/heads/main' && github.repository == 'NCSdecoopman/SnowViz'
-        run: |
-          terraform apply -auto-approve \
-            -var="aws_region=eu-west-3" \
-            -var="table_name=Observations" \
-            -var="repo_owner=NCSdecoopman" \
-            -var="repo_name=SnowViz" \
-            -var="branch=main" \
-            -var="secret_name=SnowViz-AutoUpdate-AWS"
+        run: terraform apply -input=false -auto-approve tfplan
