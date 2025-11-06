@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  plan-apply:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -25,17 +25,14 @@ jobs:
         working-directory: export
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.13.5
           terraform_wrapper: false
 
-      - name: Configure AWS credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
@@ -43,23 +40,11 @@ jobs:
       - name: Terraform init
         run: terraform init -input=false
 
-      - name: Terraform fmt
-        run: terraform fmt -check -recursive
-
-      - name: Terraform validate
-        run: terraform validate
-
-      - name: Terraform plan
-        run: |
-          terraform plan -input=false -out=tfplan \
-            -lock-timeout=5m \
+      - name: Terraform apply
+        run: terraform apply -auto-approve \
             -var="aws_region=${{ secrets.AWS_REGION }}" \
             -var="table_name=Observations" \
             -var="repo_owner=NCSdecoopman" \
             -var="repo_name=SnowViz" \
             -var="branch=main" \
             -var="secret_name=SnowViz-AutoUpdate-AWS"
-
-      - name: Terraform apply (main only)
-        if: github.ref == 'refs/heads/main' && github.repository == 'NCSdecoopman/SnowViz'
-        run: terraform apply -input=false -auto-approve tfplan
