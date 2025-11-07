@@ -56,6 +56,16 @@ data "archive_file" "lambda_zip" {
 }
 
 ########################
+# LOGS
+########################
+resource "aws_cloudwatch_log_group" "lg" {
+  name              = "/aws/lambda/ddb-export-observations-to-github"
+  retention_in_days = 7
+  # crée le log group avant toute exécution de la Lambda
+  depends_on = [aws_lambda_function.exporter]
+}
+
+########################
 # IAM
 ########################
 resource "aws_iam_role" "lambda_role" {
@@ -106,6 +116,8 @@ resource "aws_iam_role_policy_attachment" "attach" {
 ########################
 # Lambda
 ########################
+data "aws_kms_alias" "aws_lambda" { name = "alias/aws/lambda" }
+
 resource "aws_lambda_function" "exporter" {
   function_name = "ddb-export-observations-to-github"
   role          = aws_iam_role.lambda_role.arn
@@ -114,6 +126,7 @@ resource "aws_lambda_function" "exporter" {
   filename      = data.archive_file.lambda_zip.output_path
   timeout       = 900
   memory_size   = 512
+  kms_key_arn = data.aws_kms_alias.aws_lambda.target_key_arn
 
   environment {
     variables = {
