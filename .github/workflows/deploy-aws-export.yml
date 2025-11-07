@@ -37,26 +37,25 @@ jobs:
           mask-aws-account-id: false
           retry-max-attempts: 3
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Terraform Init
-        run: terraform init -input=false
-
-      - name: Force new zip and taint
+      - name: Zip lambda
+        working-directory: export
         run: |
-          rm -f lambda.zip
-          # ne casse pas le job si pas encore créée
-          terraform taint aws_lambda_function.exporter || true
+          zip -r9 lambda.zip lambda_function.py
 
-      - name: Terraform apply (with -var)
+      - name: Update Lambda code
+        working-directory: export
         run: |
-          terraform apply \
-            -input=false -auto-approve \
-            -var="aws_region=eu-west-3" \
-            -var="table_name=Observations" \
-            -var="repo_owner=NCSdecoopman" \
-            -var="repo_name=SnowViz" \
-            -var="branch=main" \
-            -var="secret_name=SnowViz-AutoUpdate-AWS"
+          aws lambda update-function-code \
+            --function-name ddb-export-observations-to-github \
+            --zip-file fileb://lambda.zip
+
+      - name: Invoke (optionnel)
+        run: |
+          aws lambda invoke \
+            --function-name ddb-export-observations-to-github \
+            --payload '{}' out.json >/dev/null
+          cat out.json
+
+      - name: Tail logs 1 min (optionnel)
+        run: aws logs tail /aws/lambda/ddb-export-observations-to-github --since 1m
             
