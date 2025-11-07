@@ -104,14 +104,6 @@ resource "aws_iam_role_policy_attachment" "attach" {
 }
 
 ########################
-# Logs
-########################
-resource "aws_cloudwatch_log_group" "lg" {
-  name              = "/aws/lambda/ddb-export-observations-to-github"
-  retention_in_days = 7
-}
-
-########################
 # Lambda
 ########################
 resource "aws_lambda_function" "exporter" {
@@ -137,7 +129,7 @@ resource "aws_lambda_function" "exporter" {
     }
   }
 
-  depends_on = [aws_iam_role_policy_attachment.attach, aws_cloudwatch_log_group.lg]
+  depends_on = [aws_iam_role_policy_attachment.attach]
 }
 
 ########################
