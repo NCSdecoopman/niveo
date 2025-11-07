@@ -35,43 +35,10 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}         # ex: eu-west-3
           audience: sts.amazonaws.com
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.9.x
-          terraform_wrapper: true
-
-      # ---------- TERRAFORM (infra) ----------
-      - name: Terraform init
-        working-directory: export
-        run: terraform init -input=false
-
-      - name: Terraform validate
-        working-directory: export
-        run: terraform validate -no-color
-
-      - name: Terraform plan
-        id: tfplan
+      - name: Zip lambda
         working-directory: export
         run: |
-          terraform plan -input=false -no-color \
-            -out=tfplan \
-            -var="aws_region=eu-west-3" \
-            -var="table_name=Observations" \
-            -var="repo_owner=NCSdecoopman" \
-            -var="repo_name=SnowViz" \
-            -var="branch=main" \
-            -var="secret_name=SnowViz-AutoUpdate-AWS"
-
-      - name: Terraform apply (main only)
-        if: github.ref == 'refs/heads/main'
-        working-directory: export
-        run: terraform apply -input=false -auto-approve tfplan
-
-      # ---------- CODE LAMBDA (zip + update) ----------
-      - name: Build package
-        working-directory: export
-        run: zip -r9 lambda.zip lambda_function.py
+          zip -r9 lambda.zip lambda_function.py
 
       - name: Update Lambda code
         working-directory: export
@@ -80,12 +47,13 @@ jobs:
             --function-name ddb-export-observations-to-github \
             --zip-file fileb://lambda.zip
 
-      - name: Smoke test
-        working-directory: export
+      - name: Invoke (optionnel) 
         run: |
-          aws lambda invoke --function-name ddb-export-observations-to-github --payload '{}' out.json >/dev/null
+          aws lambda invoke \
+            --function-name ddb-export-observations-to-github \
+            --payload '{}' out.json >/dev/null
           cat out.json
 
-      - name: Logs (last 1m)
-        run: aws logs tail /aws/lambda/ddb-export-observations-to-github --since 1m || true
+      - name: Tail logs 1 min (optionnel)
+        run: aws logs tail /aws/lambda/ddb-export-observations-to-github --since 1m
             
