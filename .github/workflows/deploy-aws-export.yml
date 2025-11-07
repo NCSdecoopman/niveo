@@ -1,50 +1,47 @@
-name: Deploy export to AWS
+# .github/workflows/deploy-aws-export.yml
+name: Deploy AWS (export)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
     paths:
       - "export/**"
       - ".github/workflows/deploy-aws-export.yml"
   workflow_dispatch: {}
 
 permissions:
-  id-token: write
+  id-token: write    # OIDC vers AWS
   contents: read
 
 concurrency:
-  group: deploy-export
-  cancel-in-progress: false
+  group: deploy-aws-export-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash
-        working-directory: export
+        working-directory: export   # Terraform vit dans export/
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: hashicorp/setup-terraform@v3
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          terraform_version: 1.13.5
-          terraform_wrapper: false
+          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_NAME_FOR_GITHUB_OIDC>
+          aws-region: eu-west-3
 
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-      - name: Terraform init
+      - name: Terraform Init
         run: terraform init -input=false
 
-      - name: Terraform apply
-        run: terraform apply -auto-approve \
-            -var="aws_region=${{ secrets.AWS_REGION }}" \
-            -var="table_name=Observations" \
-            -var="repo_owner=NCSdecoopman" \
-            -var="repo_name=SnowViz" \
-            -var="branch=main" \
-            -var="secret_name=SnowViz-AutoUpdate-AWS"
+      - name: Terraform Plan
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -auto-approve tfplan
