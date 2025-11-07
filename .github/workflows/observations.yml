@@ -117,3 +117,12 @@ jobs:
             logs/observations_missing/*.csv
           if-no-files-found: warn
           retention-days: 10
+
+  invoke-export:
+    needs: fetch-stations
+    uses: NCSdecoopman/SnowViz/.github/workflows/invoke-ddb-export.yml@main
+    with:
+      function_name: ddb-export-observations-to-github
+    secrets:
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
