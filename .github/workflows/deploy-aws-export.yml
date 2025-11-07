@@ -43,8 +43,19 @@ jobs:
       - name: Terraform Init
         run: terraform init -input=false
 
-      - name: Terraform Plan
-        run: terraform plan -input=false -out=tfplan
+      - name: Force new zip and taint
+        run: |
+          rm -f lambda.zip
+          # ne casse pas le job si pas encore créée
+          terraform taint aws_lambda_function.exporter || true
 
-      - name: Terraform Apply
-        run: terraform apply -input=false -auto-approve tfplan
+      - name: Terraform apply (with -var)
+        run: |
+          terraform apply \
+            -input=false -auto-approve \
+            -var="aws_region=eu-west-3" \
+            -var="table_name=Observations" \
+            -var="repo_owner=NCSdecoopman" \
+            -var="repo_name=SnowViz" \
+            -var="branch=main" \
+            -var="secret_name=SnowViz-AutoUpdate-AWS"
