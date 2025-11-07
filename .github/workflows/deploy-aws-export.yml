@@ -40,6 +40,12 @@ jobs:
         with:
           terraform_version: 1.9.7
 
+      - name: Importer les ressources existantes
+        run: |
+          terraform import aws_iam_role.lambda_role ddb-export-snowviz-role || true
+          terraform import aws_iam_policy.lambda_policy arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:policy/ddb-export-snowviz-policy || true
+          terraform import aws_lambda_function.exporter ddb-export-observations-to-github || true
+
       - name: Terraform fmt (check)
         run: terraform fmt -check -recursive
 
@@ -52,12 +58,3 @@ jobs:
       - name: Terraform apply (main only)
         if: github.ref == 'refs/heads/main' && github.repository == 'NCSdecoopman/SnowViz'
         run: terraform apply -input=false -auto-approve tfplan
-
-      - name: Sauvegarder l'état Terraform
-        if: success()
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add terraform.tfstate terraform.tfstate.backup
-          git commit -m "Mise à jour de l'état Terraform [skip ci]" || echo "Aucun changement à commiter"
-          git push
