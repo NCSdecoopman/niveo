@@ -59,3 +59,4 @@ jobs:
             -var="repo_name=SnowViz" \
             -var="branch=main" \
             -var="secret_name=SnowViz-AutoUpdate-AWS"
+            
