@@ -42,7 +42,7 @@ jobs:
 
       # Optionnel: check format
       - name: Terraform fmt (check)
-        run: find . -name "*.tf" -exec terraform fmt -check {} +
+        run: terraform fmt -check -recursive
 
       - name: Terraform init
         run: terraform init -input=false
