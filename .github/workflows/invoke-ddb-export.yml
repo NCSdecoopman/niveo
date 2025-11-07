@@ -1,10 +1,10 @@
-name: Invoke DDB → GitHub export
+name: Invoke DDB to GitHub export
 
 on:
   workflow_dispatch:
     inputs:
       function_name:
-        description: "lambda_function""
+        description: "lambda_function"
         required: false
         default: ddb-export-observations-to-github
       region:
@@ -35,7 +35,6 @@ jobs:
   invoke:
     runs-on: ubuntu-latest
     env:
-      # si "region" non fourni en dispatch, on prend le secret
       AWS_REGION: ${{ inputs.region || secrets.AWS_REGION }}
     steps:
       - name: Configure AWS credentials (OIDC)
