@@ -120,10 +120,11 @@ resource "aws_cloudwatch_event_target" "tgt" {
   arn       = aws_lambda_function.exporter.arn
 }
 
-resource "aws_lambda_permission" "allow_events" {
-  statement_id  = "AllowExecutionFromEventBridge"
+resource "aws_lambda_permission" "allow_events_daily" {
+  statement_id  = "AllowFromEvents-ddb-export-observations-daily"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.exporter.function_name
+  function_name = aws_lambda_function.exporter.arn
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.daily.arn
+  depends_on    = [aws_lambda_function.exporter, aws_cloudwatch_event_rule.daily]
 }
