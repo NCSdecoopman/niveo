@@ -10,7 +10,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  id-token: write    # OIDC vers AWS
+  id-token: write     # OIDC -> AWS
   contents: read
 
 concurrency:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: export   # Terraform vit dans export/
+        working-directory: export  # Terraform vit dans export/
 
     steps:
       - name: Checkout
@@ -35,25 +35,25 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}         # ex: eu-west-3
           audience: sts.amazonaws.com
 
-      - name: Zip lambda
-        working-directory: export
-        run: |
-          zip -r9 lambda.zip lambda_function.py
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.7
 
-      - name: Update Lambda code
-        working-directory: export
-        run: |
-          aws lambda update-function-code \
-            --function-name ddb-export-observations-to-github \
-            --zip-file fileb://lambda.zip
+      # Optionnel: check format
+      - name: Terraform fmt (check)
+        run: terraform fmt -check -recursive
 
-      - name: Invoke (optionnel) 
-        run: |
-          aws lambda invoke \
-            --function-name ddb-export-observations-to-github \
-            --payload '{}' out.json >/dev/null
-          cat out.json
+      - name: Terraform init
+        run: terraform init -input=false
 
-      - name: Tail logs 1 min (optionnel)
-        run: aws logs tail /aws/lambda/ddb-export-observations-to-github --since 1m
-            
+      - name: Terraform validate
+        run: terraform validate
+
+      # Plan distinct pour logs clairs
+      - name: Terraform plan
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Terraform apply (main only)
+        if: github.ref == 'refs/heads/main' && github.repository == 'NCSdecoopman/SnowViz'
+        run: terraform apply -input=false -auto-approve tfplan
