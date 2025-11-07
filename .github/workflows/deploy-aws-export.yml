@@ -40,7 +40,6 @@ jobs:
         with:
           terraform_version: 1.9.7
 
-      # Optionnel: check format
       - name: Terraform fmt (check)
         run: terraform fmt -check -recursive
 
