@@ -49,7 +49,7 @@ jobs:
             --function-name ddb-export-observations-to-github \
             --zip-file fileb://lambda.zip
 
-      - name: Invoke (optionnel)
+      - name: Invoke (optionnel) 
         run: |
           aws lambda invoke \
             --function-name ddb-export-observations-to-github \
