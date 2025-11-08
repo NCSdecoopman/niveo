@@ -1,4 +1,3 @@
-# .github/workflows/deploy-aws-export.yml
 name: Deploy AWS (export)
 
 on:

@@ -1,4 +1,4 @@
-name: Observations Daily
+name: Download observations and upload to DynamoDB
 
 on:
   schedule:
@@ -11,7 +11,7 @@ on:
         default: "0"
 
 concurrency:
-  group: observations-daily
+  group: download-observations
   cancel-in-progress: false
 
 permissions:
@@ -22,7 +22,6 @@ jobs:
   fetch-observations:
     runs-on: ubuntu-latest
     env:
-      AWS_REGION: ${{ secrets.AWS_REGION }}
       MF_BASIC_AUTH_B64: ${{ secrets.MF_BASIC_AUTH_B64 }}
       METEO_TOKEN_CACHE: ${{ github.workspace }}/.cache/mf_token.json
       METEO_MAX_RPM: '50'

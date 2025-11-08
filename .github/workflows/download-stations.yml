@@ -1,12 +1,12 @@
-name: Stations Weekly
+name: Download and update weather stations metadata
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # 6h UTC = 7h Paris (en hiver), 8h Paris (en été)
+    - cron: '0 23 * * 5' # Chaque vendredi à 23h00 UTC (00:00 samedi à Paris en hiver)
   workflow_dispatch: {}
 
 concurrency:
-  group: stations-weekly
+  group: stations-metadata-update
   cancel-in-progress: false
 
 permissions:
@@ -17,7 +17,6 @@ jobs:
   fetch-stations:
     runs-on: ubuntu-latest
     env:
-      AWS_REGION: ${{ secrets.AWS_REGION }}
       MF_BASIC_AUTH_B64: ${{ secrets.MF_BASIC_AUTH_B64 }}
       METEO_TOKEN_CACHE: ${{ github.workspace }}/.cache/mf_token.json
       METEO_MAX_RPM: '50'
@@ -40,11 +39,10 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Download date and export to DynamoDB
+      - name: Download stations and export to DynamoDB
         run: |
           set -euxo pipefail
-          python -u -m src.download.fetch_stations \
-          | python -m src.upload.stdin_to_dynamodb --table Stations --pk id
+          python -u -m src.download.fetch_stations
 
       - name: Commit stations.json if changed
         if: ${{ github.ref == 'refs/heads/main' }}
