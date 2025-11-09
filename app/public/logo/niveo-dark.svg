@@ -23,5 +23,5 @@
         fill="#000000">niveo</text>
 
   <!-- barre sur e -->
-  <line x1="130" y1="29" x2="142" y2="29" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <line x1="138" y1="29" x2="150" y2="29" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
 </svg>
