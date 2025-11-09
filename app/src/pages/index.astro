@@ -18,8 +18,16 @@ const staUrl = `${base}data/metadonnees/stations.json`;
     <meta name="color-scheme" content="dark light" />
   </head>
   <body>
-    <header class="container page-header">
-      <h1>niveo</h1>
+    <header class="container page-header flex items-center gap-3">
+      <h1 class="sr-only">niveo</h1>
+        <img
+          src={`${base}logo/niveo-black.svg`}
+          alt="niveo"
+          width="128"
+          height="44"
+          loading="eager"
+          decoding="async"
+        />
     </header>
 
     <main class="container grid">

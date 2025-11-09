@@ -1,0 +1,27 @@
+<svg width="256" height="88" viewBox="0 0 256 88" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flocon minimal -->
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none">
+    <g id="arm">
+      <line x1="40" y1="26" x2="40" y2="62"/>
+      <line x1="36" y1="32" x2="44" y2="32"/>
+      <line x1="36" y1="56" x2="44" y2="56"/>
+    </g>
+
+    <use href="#arm"/>
+    <use href="#arm" transform="rotate(60 40 44)"/>
+    <use href="#arm" transform="rotate(120 40 44)"/>
+    <use href="#arm" transform="rotate(180 40 44)"/>
+    <use href="#arm" transform="rotate(240 40 44)"/>
+    <use href="#arm" transform="rotate(300 40 44)"/>
+  </g>
+
+  <!-- marque encore plus rapprochée -->
+  <text x="68" y="56"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="42"
+        font-weight="800"
+        fill="#FFFFFF">niveo</text>
+
+  <!-- barre sur e recalée aussi -->
+  <line x1="130" y1="29" x2="142" y2="29" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+</svg>
