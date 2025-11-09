@@ -20,8 +20,5 @@
         font-family="Inter, system-ui, sans-serif"
         font-size="42"
         font-weight="800"
-        fill="#000000">niveo</text>
-
-  <!-- barre sur e -->
-  <line x1="138" y1="29" x2="150" y2="29" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+        fill="#000000">nivēo</text>
 </svg>
