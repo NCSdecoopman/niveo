@@ -70,7 +70,7 @@ resource "aws_cloudwatch_log_group" "lg" {
 # IAM
 ########################
 resource "aws_iam_role" "lambda_role" {
-  name = "ddb-export-SnowViz-role"
+  name = "ddb-export-snowviz-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [{
@@ -82,7 +82,7 @@ resource "aws_iam_role" "lambda_role" {
 }
 
 resource "aws_iam_policy" "lambda_policy" {
-  name        = "ddb-export-SnowViz-policy"
+  name        = "ddb-export-snowviz-policy"
   description = "DynamoDB Scan, Secrets read, Logs"
   policy = jsonencode({
     Version = "2012-10-17",
