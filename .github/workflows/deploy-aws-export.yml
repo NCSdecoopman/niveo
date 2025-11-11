@@ -22,6 +22,8 @@ jobs:
     defaults:
       run:
         working-directory: export
+    env:
+      TF_PLUGIN_CACHE_DIR: ~/.terraform.d/plugin-cache
 
     steps:
       - name: Checkout
@@ -32,7 +34,6 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
-          audience: sts.amazonaws.com
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -44,7 +45,7 @@ jobs:
         with:
           path: |
             ~/.terraform.d/plugin-cache
-            .terraform
+            export/.terraform
           key: tf-${{ runner.os }}-${{ hashFiles('export/**/*.tf') }}
           restore-keys: |
             tf-${{ runner.os }}-
@@ -69,9 +70,11 @@ jobs:
         run: |
           set -eux
           terraform import aws_iam_role.lambda_role ddb-export-snowviz-role || true
-          terraform import aws_iam_policy.lambda_policy arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:policy/ddb-export-snowviz-policy || true
           terraform import aws_lambda_function.exporter ddb-export-observations-to-github || true
           terraform import aws_cloudwatch_log_group.lg /aws/lambda/ddb-export-observations-to-github || true
+
+      - name: Terraform validate
+        run: terraform validate
 
       - name: Terraform plan
         run: terraform plan -input=false -out=tfplan
