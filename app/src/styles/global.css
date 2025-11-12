@@ -172,5 +172,3 @@ html, body {
   max-height: 100svh !important;
   overflow: hidden !important;
 }
-.page-header a { display:inline-block; }
-.page-header a:focus { outline:none; }
