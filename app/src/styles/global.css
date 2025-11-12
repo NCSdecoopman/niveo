@@ -1,78 +1,167 @@
 @import "tailwindcss";
 
-/* Thème clair */
-:root{
-  --bg:#f8fafc; --panel:#fff; --line:#d0d7de; --fg:#0f172a; --muted:#64748b; --accent:#007aff;
+/* === Thème === */
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --panel: #fff;
+  --line: #d0d7de;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --accent: #007aff;
 }
 
-/* Base */
-html,body{height:100%}
-body{
-  margin:0; padding:0; color:var(--fg); background:var(--bg);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  display:flex; flex-direction:column; height:100vh; overflow:hidden;
+/* === Viewport fiable + verrouillage page === */
+html, body {
+  height: 100dvh;             /* Android/Chrome récents */
+  min-height: 100svh;         /* quand la barre d’adresse est visible */
+  max-height: 100dvh;
+  overflow: hidden;           /* souhaité */
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
-/* Header */
-.page-header{flex:0 0 auto; padding:0 0.5vw}
-.page-header img{height:50px; width:auto}
-
-/* Main */
-.page-main{
-  flex:1 1 auto; display:flex; width:97%; margin:0 auto; padding:0; min-height:0;
+/* Fallback anciens webkit */
+@supports not (height: 100dvh) {
+  html, body { height: -webkit-fill-available; }
 }
 
-/* Carte + panel wrapper */
-.page-main .layout{
-  flex:1; display:flex; flex-direction:column; gap:12px; min-height:0;
+/* === Base === */
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Panel + Map conteneurs */
-#map, #panel{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:8px;
-  box-shadow:0 2px 6px rgba(0,0,0,.1);
-  min-width:0;
+/* === Header === */
+.page-header {
+  flex: 0 0 auto;
+  padding: 0 0.5vw;
+}
+.page-header img {
+  height: 50px;
+  width: auto;
 }
 
-/* Panel contenu */
+/* === Main === */
+.page-main {
+  flex: 1 1 auto;
+  display: flex;
+  width: 97%;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 0;       /* évite overflow en flex */
+  height: 100%;
+}
+
+/* Wrapper carte + panel */
+.page-main .layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+/* === Boîtes: carte + panel (styles communs) === */
+#map,
 #panel {
-  height:260px;                 /* mobile par défaut */
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  min-width: 0;
+  min-height: 0;       /* ne force pas la hauteur */
+}
+
+/* Carte: occupe la hauteur disponible */
+#map {
+  flex: 1;
+  border-radius: 6px;
+}
+
+/* Panel contenu + animation d’apparition */
+#panel {
+  height: 260px;                  /* défaut mobile */
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 3s ease-out, transform 1s ease-out;
+  transition: opacity .6s ease-out, transform .6s ease-out;
 }
-
 #panel.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-.panel-body{height:100%; display:flex; flex-direction:column}
-.panel-chart{flex:1; min-height:100px}
-
-/* Carte pleine hauteur disponible */
-#map{flex:1; min-height:0; border:1px solid var(--line); border-radius:6px}
-
-/* Carte enveloppe (section.card) sans styles parasites */
-.page-main > .card{
-  background:none; border:none; box-shadow:none; padding:0; gap:12px;
-  display:flex; flex-direction:column; flex:1; min-height:0;
+.panel-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.panel-chart {
+  flex: 1;
+  min-height: 100px;
 }
 
-/* Desktop: split 50/50 quand le panel est affiché */
-@media (min-width:1024px){
-  .page-main .layout.has-panel{
-    display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch;
+/* Réinitialisation éventuelle d’un conteneur .card autour de la carte */
+.page-main > .card {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* === Desktop: split 50/50 quand panel affiché === */
+@media (min-width: 1024px) {
+  .page-main .layout.has-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: stretch;
   }
-  #map,#panel{height:100%}
-  #panel{height:auto}                /* laisse la grille gérer la hauteur */
+  #map,
+  #panel { height: 100%; }
+  #panel { height: auto; }       /* la grille gère la hauteur */
 }
 
-/* Footer */
-.site-footer{flex:0 0 auto; font-size:10px; padding:4px 2vw 6px; color:var(--muted)}
-.meta{display:flex; flex-wrap:wrap; gap:.3rem; margin:0; align-items:center; justify-content:flex-start}
-@media (max-width:768px){.meta{justify-content:center}}
-.meta a{color:var(--muted); text-decoration:none; border-bottom:1px dotted currentColor}
-.meta a:hover{text-decoration:underline}
+/* === Mobile: bornes de hauteur === */
+@media (max-width: 1023px) {
+  #panel { max-height: 40svh; }  /* ne dépasse pas l’écran visible */
+  #map   { flex: 1 1 auto; }
+}
+
+/* === Footer === */
+.site-footer {
+  flex: 0 0 auto;
+  font-size: 10px;
+  padding: 4px 2vw 6px;
+  color: var(--muted);
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .meta { justify-content: center; }
+}
+.meta a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+.meta a:hover { text-decoration: underline; }
+
+/* === Accessibilité: réduit les animations si demandé === */
+@media (prefers-reduced-motion: reduce) {
+  #panel { transition: none; transform: none; opacity: 1; }
+}
