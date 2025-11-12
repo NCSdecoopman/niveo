@@ -166,7 +166,7 @@ body {
   #panel { transition: none; transform: none; opacity: 1; }
 }
 
-/* Correctif hauteur Samsung S20+ */
+/* Correctif hauteur mobile */
 html, body {
   height: 100svh !important;     /* hauteur visible réelle */
   max-height: 100svh !important;
