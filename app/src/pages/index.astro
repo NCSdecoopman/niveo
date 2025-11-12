@@ -16,12 +16,14 @@ const staUrl = `${base}data/metadonnees/stations.json`;
   <body data-obs-url={obsUrl}>
     <header class="container page-header flex items-center gap-3">
       <h1 class="sr-only">Nivéo - Application de visualisation de la hauteur de neige</h1>
-      <img
-        src={`${base}logo/niveo-dark.svg`}
-        alt="Nivéo"
-        loading="eager"
-        decoding="async"
-      />
+        <a href={base}>
+          <img
+            src={`${base}logo/niveo-dark.svg`}
+            alt="Nivéo"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
     </header>
     
     <main class="page-main">
