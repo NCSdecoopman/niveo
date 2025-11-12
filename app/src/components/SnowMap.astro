@@ -1,134 +1,342 @@
 ---
-import 'leaflet/dist/leaflet.css';
 interface Props { obsUrl: string; staUrl: string; }
 const { obsUrl, staUrl } = Astro.props as Props;
 ---
-
 <div id="map" data-obs={obsUrl} data-sta={staUrl}></div>
-<div id="legend" class="legend"></div>
+<aside class="panel card" id="panel" hidden>
+  <div class="panel-body">
+    <h2 class="sr-only" id="panel-title">Graphique d'évolution</h2>
+    <div class="panel-chart">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+</aside>
 
-<!-- Charger Leaflet via CDN pour éviter la résolution Vite -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6"></script>
 
 <script type="module">
-  // ISO UTC -> +1 jour -> "JJ/MM/AA"
+  // utils
   const fmtDatePlus1 = (iso) => {
-    const d = new Date(iso);
-    d.setUTCDate(d.getUTCDate() + 1);
-    const dd = String(d.getUTCDate()).padStart(2, '0');
-    const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
-    const yy = String(d.getUTCFullYear()).slice(-2);
-    return `${dd}/${mm}/${yy}`;
+    const d = new Date(iso); d.setUTCDate(d.getUTCDate() + 1);
+    return `${String(d.getUTCDate()).padStart(2,'0')}/${String(d.getUTCMonth()+1).padStart(2,'0')}/${String(d.getUTCFullYear()).slice(-2)}`;
   };
-
-  const el = document.getElementById('map');
-  const obsUrl = el.dataset.obs;
-  const staUrl = el.dataset.sta;
-
   const num = v => (v === undefined || v === '' ? null : Number(v));
   const fmt = n => (n === null || Number.isNaN(n) ? '—' : String(n));
-  const sizeScale = (vals, min=4, max=22) => {
-    const v = vals.filter(x => typeof x === 'number' && isFinite(x));
-    if (!v.length) return () => min;
-    const vmin = Math.min(...v), vmax = Math.max(...v);
-    if (vmax <= 0) return () => min;
-    return x => {
-      const c = Math.max(0, x || 0);
-      const t = (Math.sqrt(c) - Math.sqrt(vmin)) / (Math.sqrt(vmax) - Math.sqrt(vmin) || 1);
-      return Math.round(min + t * (max - min));
-    };
-  };
+  const COLORS = ['#2aff00','#c7ff00','#ffe600','#ff8c00','#ff0000','#ff00ff'];
 
   (async () => {
-    // attendre que le script Leaflet CDN charge et définisse L
-    await new Promise(res => {
-      if (window.L) return res();
-      window.addEventListener('load', res);
-    });
+    await new Promise(res => { if (window.maplibregl) res(); else window.addEventListener('load', res); });
+
+    const mapEl = document.getElementById('map');
+    const obsUrl = mapEl.dataset.obs;
+    const staUrl = mapEl.dataset.sta;
 
     const [obs, sta] = await Promise.all([
-      fetch(obsUrl).then(r => r.json()),
-      fetch(staUrl).then(r => r.json()),
+      fetch(obsUrl).then(r=>r.json()),
+      fetch(staUrl).then(r=>r.json())
     ]);
 
     const dates = Array.from(new Set(obs.map(x => x.date))).sort();
     if (!dates.length) return;
-    const d = dates.at(-1);
+    const lastDate = dates.at(-1);
 
-    const mSta = new Map(sta.map(s => [String(s.id), s]));
-    const rows = obs.filter(x => x.date === d).map(x => {
-      const s = mSta.get(String(x.id));
-      if (!s) return null;
-      return {
-        id: String(x.id), nom: s.nom, lat: s.lat, lon: s.lon, alt: s.alt,
-        NEIGETOT06: num(x.NEIGETOT06), HNEIGEF: num(x.HNEIGEF),
-        date: x.date
-      };
-    }).filter(Boolean);
+    // Index temporel global
+    const allDates = Array.from(new Set(obs.map(x => x.date))).sort();
+
+    // Séries par station alignées sur allDates
+    const seriesById = new Map();
+    {
+      const key = (id, date) => `${id}@@${date}`;
+      const idx = new Map(obs.map(o => [key(String(o.id), o.date), o]));
+      for (const s of sta) {
+        const id = String(s.id);
+        const serieNEIGETOT06 = allDates.map(d => {
+          const rec = idx.get(key(id, d));
+          const v = rec?.NEIGETOT06;
+          return v === undefined || v === '' ? null : Number(v);
+        });
+        const serieHNEIGEF = allDates.map(d => {
+          const rec = idx.get(key(id, d));
+          const v = rec?.HNEIGEF;
+          return v === undefined || v === '' ? null : Number(v);
+        });
+        seriesById.set(id, { NEIGETOT06: serieNEIGETOT06, HNEIGEF: serieHNEIGEF });
+      }
+    }
+
+    // Snapshot dernière date
+    const staMap = new Map(sta.map(s => [String(s.id), s]));
+    const rows = obs
+      .filter(x => x.date === lastDate)
+      .map(x => {
+        const s = staMap.get(String(x.id)); if (!s) return null;
+        return { id:String(x.id), nom:s.nom, lat:s.lat, lon:s.lon, alt:s.alt,
+                 NEIGETOT06:num(x.NEIGETOT06), HNEIGEF:num(x.HNEIGEF), date:x.date };
+      })
+      .filter(Boolean);
 
     const pts = rows.filter(r => Number.isFinite(r.lat) && Number.isFinite(r.lon));
     if (!pts.length) return;
 
-    const bounds = L.latLngBounds(pts.map(p => [p.lat, p.lon]));
-    const center = bounds.getCenter();
+    const lats = pts.map(p=>p.lat), lons = pts.map(p=>p.lon);
+    const bbox = [Math.min(...lons), Math.min(...lats), Math.max(...lons), Math.max(...lats)];
 
-    const map = L.map(el, { zoomControl: true }).setView(center, 10); // zoom provisoire
+    // Chart: créé à la demande. Panel révélé au premier rendu.
+    const ctx = document.getElementById('chart')?.getContext('2d');
+    let chart = null;
+    let panelShown = false;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap' }).addTo(map);
-    const layer = L.layerGroup().addTo(map);
+    function showPanelOnce() {
+      if (panelShown) return;
+      const panel = document.getElementById('panel');
+      if (panel) {
+        panel.hidden = false;                     // rend visible dans le flux
+        requestAnimationFrame(() => {             // attend le prochain repaint
+          panel.classList.add('visible');         // déclenche la transition
+        });
+      }
+      const layout = document.querySelector('.page-main .layout');
+      if (layout) layout.classList.add('has-panel'); // active la grille desktop
+      panelShown = true;
+    }
 
-    let varKey = 'NEIGETOT06';
-    const ctrl = document.createElement('div');
-    ctrl.className = 'controls';
-    ctrl.innerHTML = `
-      <fieldset class="fieldset"><legend class="sr-only">Variable carte</legend>
-        <label><input type="radio" name="var" value="NEIGETOT06" checked>Hauteur à 6h</label>
-        <label><input type="radio" name="var" value="HNEIGEF">Hauteur neige fraîche</label>
-      </fieldset>
-    `;
-    el.parentElement.insertBefore(ctrl, el);
-    ctrl.querySelectorAll('input[name="var"]').forEach(r =>
-      r.addEventListener('change', e => { varKey = e.target.value; render(); })
-    );
+    function renderChart(stationName, serieLeft, serieRight) {
+      if (!ctx) return;
+      const labels = allDates.map(fmtDatePlus1);
 
-    let fitted = false;
+      // plugin ombre
+      const shadowPlugin = {
+        id: 'shadow',
+        beforeDatasetDraw(chart, args) {
+          const { ctx } = chart;
+          ctx.save();
+          ctx.shadowColor = 'rgba(0,0,0,0.15)';
+          ctx.shadowBlur = 8;
+          ctx.shadowOffsetY = 2;
+        },
+        afterDatasetDraw(chart, args) { chart.ctx.restore(); }
+      };
 
-    const render = () => {
-      layer.clearLayers();
-      const vals = rows.map(r => r[varKey] ?? 0);
-      const rad = sizeScale(vals);
-
-      for (const r of rows) {
-        if (!Number.isFinite(r.lat) || !Number.isFinite(r.lon)) continue;
-        const v = r[varKey] ?? 0;
-        const dstr = fmtDatePlus1(r.date);
-        L.circleMarker([r.lat, r.lon], {
-          radius: rad(v), color: '#3aa1ff', weight: 1, fillColor: '#3aa1ff', fillOpacity: 0.35
-        }).bindPopup(
-          `<b>${r.nom}</b> (${fmt(r.alt)} m)
-          <br/>${dstr}
-          <br/>Hauteur à 6h : ${fmt(r.NEIGETOT06)} cm
-          <br/>Neige fraîche : ${fmt(r.HNEIGEF)} cm`
-        ).addTo(layer);
+      if (!chart) {
+        chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: 'Neige totale (cm)',
+                data: serieLeft,
+                yAxisID: 'y',
+                pointRadius: 0,
+                pointHoverRadius: 3,
+                borderWidth: 2,
+                tension: 0.25,
+                spanGaps: true,
+                fill: true,
+                borderColor: '#007aff',
+                backgroundColor: (c) => {
+                  const { ctx: g, chartArea } = c.chart;
+                  if (!chartArea) return 'rgba(0,122,255,0)'; // premier pass
+                  const grad = g.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+                  grad.addColorStop(0, 'rgba(0,122,255,0.35)');
+                  grad.addColorStop(1, 'rgba(0,122,255,0.02)');
+                  return grad;
+                }
+              },
+              {
+                label: 'Neige fraîche (cm)',
+                data: serieRight,
+                yAxisID: 'y1',
+                pointRadius: 0,
+                borderWidth: 2,
+                borderDash: [4, 3],
+                spanGaps: true,
+                tension: 0.15,
+                hidden: true                // <- masqué
+              }
+            ]
+          },
+          options: {
+            animation: false,
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { ticks: { maxTicksLimit: 8 }, grid: { display: false } },
+              y: { position: 'left', title: { display: true, text: 'Hauteur de neige (cm)' }, beginAtZero: true },
+              y1: { display: false }        // <- axe droit caché
+            },
+            plugins: {
+              legend: {
+                display: false    // <- masque entièrement la légende
+                // labels: {
+                //   filter: (item) => item.datasetIndex === 0   // <- cache l’entrée légende
+                // }
+              },
+              tooltip: {
+                mode: 'index', intersect: false,
+                filter: (item) => item.datasetIndex === 0     // <- cache la ligne tooltip
+              }
+            }
+          }
+        });
+      } else {
+        chart.data.labels = labels;
+        chart.data.datasets[0].data = serieLeft;
+        chart.data.datasets[1].data = serieRight; // ok, reste masqué
+        chart.update();
       }
 
-      if (!fitted && bounds.isValid()) {
-        fitted = true;
-        if (pts.length === 1) map.setView(center, 12);
-        else map.fitBounds(bounds.pad(0.12), { maxZoom: 12 });
-      }
 
-      const leg = document.getElementById('legend');
-      const vs = vals.filter(x => Number.isFinite(x));
-      if (!vs.length) { leg.textContent = `Aucune valeur pour ${varKey}`; return; }
-      const max = Math.max(...vs), mid = Math.round(max / 2);
-      leg.innerHTML = `<span>Échelle (${varKey})</span>` + [0, mid, max].map(val => {
-        const r = rad(val);
-        return `<span><span class="dot" style="width:${r}px;height:${r}px"></span> ${val}</span>`;
-      }).join('');
+      showPanelOnce();
+      chart.resize();
+
+      const titleEl = document.getElementById('panel-title');
+      if (titleEl) titleEl.textContent = stationName || 'Historique';
+    }
+
+
+    // MapLibre
+    const map = new maplibregl.Map({
+      container: mapEl,
+      attributionControl: false,
+      style: {
+        version: 8,
+        sources: {
+          osm: {
+            type: 'raster',
+            tiles: [
+              'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            ],
+            tileSize: 256,
+            attribution: '© OpenStreetMap'
+          }
+        },
+        layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+      },
+      center: [(bbox[0]+bbox[2])/2, (bbox[1]+bbox[3])/2],
+      zoom: 9
+    });
+    map.addControl(new maplibregl.NavigationControl({ showCompass:false }), 'top-right');
+    const attrib = new maplibregl.AttributionControl({ compact: true });
+    map.addControl(attrib, 'bottom-left');
+    map.once('load', () => {
+      document.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+    });
+
+    // Couleurs
+    const key = 'NEIGETOT06';
+    const vals = rows.map(r => r[key] ?? 0).filter(Number.isFinite);
+    const vmin = Math.min(...vals, 0);
+    const vmax = Math.max(...vals, 1);
+    const fc = {
+      type: 'FeatureCollection',
+      features: rows.map(r => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [r.lon, r.lat] },
+        properties: { id:r.id, nom:r.nom, alt:r.alt, date:r.date, NEIGETOT06:r.NEIGETOT06, HNEIGEF:r.HNEIGEF, v:r[key] ?? 0 }
+      }))
     };
+    function stops(min, max, palette){
+      const n = palette.length;
+      return Array.from({length:n}, (_,i)=>[min + (i/(n-1))*(max-min), palette[i]]);
+    }
+    const colorStops = stops(vmin, vmax, COLORS);
 
+    map.on('load', () => {
+      map.addSource('pts', { type:'geojson', data: fc });
+      map.addLayer({
+        id: 'pts-circles',
+        type: 'circle',
+        source: 'pts',
+        paint: {
+          'circle-radius': 7,
+          'circle-color': ['interpolate', ['linear'], ['get','v'], ...colorStops.flat()],
+          'circle-opacity': 0.9,
+          'circle-stroke-color': '#fff',
+          'circle-stroke-width': 0.75
+        }
+      });
 
-    render();
+      // Tooltip (affiché uniquement sur desktop)
+      if (window.matchMedia('(min-width: 769px)').matches) {
+        const hoverPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
+
+        map.on('mouseenter', 'pts-circles', () => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mousemove', 'pts-circles', (e) => {
+          const f = e.features && e.features[0];
+          if (!f) return;
+          const p = f.properties;
+          hoverPopup
+            .setLngLat(e.lngLat)
+            .setHTML(`<b>${p.nom}</b><br>${fmt(Number(p.alt))} m`)
+            .addTo(map);
+        });
+
+        map.on('mouseleave', 'pts-circles', () => {
+          map.getCanvas().style.cursor = '';
+          hoverPopup.remove();
+        });
+      }
+
+      // Légende simple
+      (function addLegendOverlay(){
+        const pad = 2;
+        const wBar = 12, hBar = 160, ticks = 5;
+        const box = document.createElement('div');
+        box.setAttribute('style',[
+          'position:absolute','right:'+pad+'px','bottom:'+pad+'px',
+          'background:rgba(255,255,255,.80)','border-radius:10px',
+          'box-shadow:0 1px 4px rgba(0,0,0,.2)','padding:8px 6px',
+          'font:10px/1.25 system-ui,sans-serif','z-index:9999','pointer-events:none'
+        ].join(';'));
+        const unit = document.createElement('div'); unit.textContent='cm'; unit.setAttribute('style','font-weight:600;margin:0 0 6px 2px'); box.appendChild(unit);
+        const wrap = document.createElement('div'); wrap.setAttribute('style','display:flex;align-items:flex-start;gap:2px;'); box.appendChild(wrap);
+        const cv = document.createElement('canvas'); cv.width=wBar; cv.height=hBar;
+        cv.setAttribute('style',['display:block','width:'+wBar+'px','height:'+hBar+'px','border:1px solid rgba(0,0,0,.25)','border-radius:9px'].join(';'));
+        const c2d = cv.getContext('2d'); const grd = c2d.createLinearGradient(0,hBar,0,0);
+        const cols = ['#2aff00','#c7ff00','#ffe600','#ff8c00','#ff0000','#ff00ff'];
+        cols.forEach((c,i)=>grd.addColorStop(i/(cols.length-1), c));
+        c2d.fillStyle = grd; c2d.fillRect(0,0,wBar,hBar);
+        wrap.appendChild(cv);
+        const ticksCol = document.createElement('div'); ticksCol.setAttribute('style','position:relative;width:12px;height:'+hBar+'px;'); wrap.appendChild(ticksCol);
+        const vals = Array.from({length:ticks},(_,i)=>vmin + i*(vmax-vmin)/(ticks-1)).reverse();
+        vals.forEach((v,i) => {
+          const pct = (i/(ticks-1))*100;
+          const tick = document.createElement('div');
+          tick.setAttribute('style',['position:absolute','top:'+pct+'%','left:0','transform:translateY(-50%)','display:flex','align-items:center','gap:1px','color:#2f3a3e'].join(';'));
+          const lab = document.createElement('div'); lab.textContent = Math.round(v); lab.setAttribute('style','font-variant-numeric:tabular-nums;margin-left:2px;color:#2f3a3e');
+          tick.appendChild(lab); ticksCol.appendChild(tick);
+        });
+        mapEl.appendChild(box);
+      })();
+
+      // Vue
+      if (pts.length === 1) { map.setCenter([pts[0].lon, pts[0].lat]); map.setZoom(12); }
+      else { map.fitBounds([[bbox[0],bbox[1]],[bbox[2],bbox[3]]], { padding: 40, maxZoom: 12 }); }
+
+      // Clic -> popup + graphique
+      map.on('click', 'pts-circles', (e) => {
+        const f = e.features?.[0]; if (!f) return;
+        const p = f.properties;
+
+        const html = `<b>${p.nom}</b> (${fmt(Number(p.alt))} m)
+          <br/>${fmtDatePlus1(p.date)}
+          <br/>Hauteur à 6h : ${fmt(Number(p.NEIGETOT06))} cm
+          <br/>Neige fraîche : ${fmt(Number(p.HNEIGEF))} cm`;
+        new maplibregl.Popup({ closeButton:true }).setLngLat(e.lngLat).setHTML(html).addTo(map);
+
+        const ser = seriesById.get(String(p.id));   // <- utiliser le même nom
+        if (ser) renderChart(p.nom, ser.NEIGETOT06, ser.HNEIGEF);
+      });
+
+    });
   })().catch(console.error);
 </script>

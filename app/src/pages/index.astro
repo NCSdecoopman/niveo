@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import DataTable from '../components/DataTable.astro';
 import SnowMap from '../components/SnowMap.astro';
 
 const base = import.meta.env.BASE_URL; // '/niveo/' en prod, '/' en dev
@@ -14,51 +13,74 @@ const staUrl = `${base}data/metadonnees/stations.json`;
     <title>Nivéo — Visualisation neigeuse</title>
     <meta name="color-scheme" content="dark light" />
   </head>
-  <body>
+  <body data-obs-url={obsUrl}>
     <header class="container page-header flex items-center gap-3">
       <h1 class="sr-only">Nivéo - Application de visualisation de la hauteur de neige</h1>
       <img
-        src={`${base}logo/niveo-light.svg`}
+        src={`${base}logo/niveo-dark.svg`}
         alt="Nivéo"
-        width="128"
-        height="44"
         loading="eager"
         decoding="async"
       />
     </header>
-
-    <main class="container grid">
-      <section class="card">
-        <h2 class="sr-only">Tableau</h2>
-        <DataTable obsUrl={obsUrl} staUrl={staUrl} />
-      </section>
-
-      <section class="card h-[600px] flex flex-col">
-        <h2 class="sr-only">Carte</h2>
-        <SnowMap obsUrl={obsUrl} staUrl={staUrl} />
+    
+    <main class="page-main">
+      <section class="card flex flex-col">
+        <h2 class="sr-only">Visualisation neigeuse</h2>
+        <div class="layout">
+          <SnowMap obsUrl={obsUrl} staUrl={staUrl} />
+        </div>
       </section>
     </main>
 
     <footer class="site-footer" role="contentinfo" aria-label="Pied de page et citation des données">
       <div class="container">
-        <p class="citation">
-          <span class="label">Source&nbsp;:</span>
-          <cite>
-            Météo-France. (2025).
-            <em>Données Publiques — API Données de climatologie (DPClim v1)</em>.
-            Portail API Météo-France. Consulté le <time datetime="2025-11-08">2025-11-08</time>,
-            depuis <a href="https://meteo.data.gouv.fr" rel="noopener noreferrer">meteo.data.gouv.fr</a>.
-          </cite>
-        </p>
         <p class="meta">
-          <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" rel="license noopener noreferrer">Licence Ouverte v2.0</a>
+          Mis à jour le<time id="last-update" datetime=""></time>
           <span aria-hidden="true">•</span>
           <a href="https://public-api.meteofrance.fr/public/DPClim/v1" rel="noopener noreferrer">API DPClim v1</a>
-          <span aria-hidden="true">•</span>
-          <span>© 2025</span>
         </p>
       </div>
     </footer>
+
+
+    <script type="module">
+      // Utilise l'URL déjà posée sur #map
+      const obsUrl =
+        document.querySelector('#map')?.dataset?.obs ||
+        document.body.dataset?.obsUrl || '';
+
+      // Format "YYYY-MM-DD" -> "JJ/MM/AAAA" sans objet Date +1j (enregistrement J correspond à J+1 à 6h)
+      const fmtFR = (iso) => {
+        if (!iso) return '';
+        const d = new Date(iso);
+        // travaille en UTC pour éviter le fuseau
+        d.setUTCDate(d.getUTCDate() + 1);
+        const dd = String(d.getUTCDate()).padStart(2, '0');
+        const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+        const yy = d.getUTCFullYear();
+        return `${dd}/${mm}/${yy}`;
+      };
+
+      (async () => {
+        if (!obsUrl) return;
+
+        const data = await fetch(obsUrl).then(r => r.json()).catch(() => null);
+        if (!Array.isArray(data) || data.length === 0) return;
+
+        const lastISO = Array.from(new Set(
+          data.map(d => d && d.date).filter(Boolean)
+        )).sort().at(-1);
+        if (!lastISO) return;
+
+        const t = document.getElementById('last-update');
+        if (t) {
+          t.textContent = fmtFR(lastISO);
+          t.setAttribute('datetime', lastISO);
+        }
+      })();
+    </script>
+
 
   </body>
 </html>
