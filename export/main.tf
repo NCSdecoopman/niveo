@@ -138,7 +138,7 @@ resource "aws_lambda_function" "exporter" {
       GH_BRANCH           = var.branch
       GH_PATH             = "data/observations.json"
       GH_TOKEN_PARAM_NAME = var.param_name
-      DDB_PROJECTION      = "id,#d,HNEIGEF,NEIGETOT,NEIGETOT06"
+      DDB_PROJECTION      = "id,#d,HNEIGEF,NEIGETOT,NEIGETOT06,expires_at"
       MAX_JSON_MB         = "100"
       FALLBACK_GZ_PATH    = "data/observations.json.gz"
     }
