@@ -1,15 +1,14 @@
 ---
 import '../styles/global.css';
-import SnowMap from '../components/SnowMap.astro';
 
 const base = import.meta.env.BASE_URL; // '/niveo/' en prod, '/' en dev
 const obsUrl = `${base}data/observations.json`;
-const staUrl = `${base}data/metadonnees/stations.json`;
 ---
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="20;url=https://naivo.fr">
     <title>Nivéo — Visualisation neigeuse</title>
     <link rel="icon" type="image/svg+xml" href="https://ncsdecoopman.github.io/niveo/logo/favicon.svg">
     <meta name="color-scheme" content="light" />
@@ -20,6 +19,138 @@ const staUrl = `${base}data/metadonnees/stations.json`;
     <meta name="robots" content="index, follow">
     <meta property="og:image" content="https://ncsdecoopman.github.io/niveo/logo/niveo-dark.svg">
     <meta name="twitter:image" content="https://ncsdecoopman.github.io/niveo/logo/niveo-dark.svg">
+    <style>
+      .redirect-legacy {
+        display: none;
+      }
+      .redirect-banner {
+        border: 1px solid var(--line);
+        background: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 45%, #ffffff 100%);
+        border-radius: 14px;
+        padding: 18px 20px;
+        display: grid;
+        gap: 16px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .redirect-content,
+      .redirect-timer {
+        position: relative;
+        z-index: 1;
+      }
+      .redirect-content {
+        display: grid;
+        gap: 10px;
+      }
+      .redirect-kicker {
+        margin: 0;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .redirect-content h3 {
+        margin: 0;
+        font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+        color: var(--fg);
+      }
+      .redirect-text {
+        margin: 0;
+        color: var(--fg);
+        max-width: 60ch;
+      }
+      .redirect-text a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 122, 255, 0.4);
+      }
+      .redirect-text a:hover {
+        border-bottom-color: var(--accent);
+      }
+      .redirect-countdown {
+        font-weight: 700;
+        background: #e2e8f0;
+        border-radius: 999px;
+        padding: 0 6px;
+        display: inline-block;
+      }
+      .redirect-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        align-items: center;
+      }
+      .redirect-button {
+        border: none;
+        border-radius: 999px;
+        padding: 10px 18px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 10px 18px rgba(0, 122, 255, 0.25);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        font-family: inherit;
+      }
+      .redirect-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 22px rgba(0, 122, 255, 0.3);
+      }
+      .redirect-button:focus-visible {
+        outline: 2px solid #0ea5e9;
+        outline-offset: 2px;
+      }
+      .redirect-hint {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .redirect-timer {
+        display: grid;
+        justify-items: center;
+        gap: 6px;
+        padding-left: 18px;
+        border-left: 1px dashed var(--line);
+      }
+      .redirect-timer-number {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 700;
+      }
+      .redirect-timer-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .redirect-progress {
+        width: 100%;
+        height: 8px;
+        background: rgba(15, 23, 42, 0.12);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .redirect-progress-bar {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(90deg, #38bdf8, #0284c7);
+        transition: width 0.2s linear;
+      }
+      @media (min-width: 900px) {
+        .redirect-banner {
+          grid-template-columns: minmax(0, 1fr) 180px;
+        }
+      }
+      @media (max-width: 899px) {
+        .redirect-timer {
+          border-left: none;
+          border-top: 1px dashed var(--line);
+          padding-left: 0;
+          padding-top: 12px;
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body data-obs-url={obsUrl}>
     <header class="container page-header flex items-center gap-3">
@@ -37,19 +168,38 @@ const staUrl = `${base}data/metadonnees/stations.json`;
     <main class="page-main">
       <section class="card flex flex-col">
         <h2 class="sr-only">Visualisation neigeuse</h2>
-        <div class="layout">
-          <SnowMap obsUrl={obsUrl} staUrl={staUrl} />
-        </div>
+        <section class="redirect-banner" aria-labelledby="redirect-title">
+          <div class="redirect-content">
+            <p class="redirect-kicker">Nouveau nom</p>
+            <h3 id="redirect-title">nivéo devient naivo</h3>
+            <p class="redirect-text">
+              Redirection automatique vers
+              <a href="https://naivo.fr">naivo.fr</a>
+              dans <span id="redirect-countdown" class="redirect-countdown" aria-live="polite">20</span> s.
+            </p>
+            <p class="redirect-text">
+              <a href="https://naivo.fr">naivo.fr</a> propose une visualisation claire des observations de neige,
+              avec des cartes et des données mises à jour régulièrement.
+            </p>
+            <div class="redirect-actions">
+              <button id="redirect-now" class="redirect-button" type="button">
+                Aller sur naivo.fr maintenant
+              </button>
+            </div>
+          </div>
+          <div class="redirect-timer" aria-hidden="true">
+            <div id="redirect-countdown-visual" class="redirect-timer-number">20</div>
+            <div class="redirect-timer-label">secondes</div>
+            <div class="redirect-progress">
+              <div id="redirect-progress-bar" class="redirect-progress-bar"></div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
 
     <footer class="site-footer" role="contentinfo" aria-label="Pied de page et citation des données">
       <div class="container">
-        <p class="meta">
-          Mis à jour le<time id="last-update" datetime=""></time>
-          <span aria-hidden="true">•</span>
-          <a href="https://portail-api.meteofrance.fr/web/fr/" rel="noopener noreferrer">Données API DPClim</a>
-        </p>
       </div>
     </footer>
 
@@ -92,6 +242,44 @@ const staUrl = `${base}data/metadonnees/stations.json`;
     </script>
 
 
+    <script type="module">
+      const redirectUrl = 'https://naivo.fr';
+      const totalSeconds = 20;
+      const countdownEl = document.getElementById('redirect-countdown');
+      const countdownVisualEl = document.getElementById('redirect-countdown-visual');
+      const progressEl = document.getElementById('redirect-progress-bar');
+      const nowButton = document.getElementById('redirect-now');
+
+      if (countdownEl && countdownVisualEl && progressEl && nowButton) {
+        let remaining = totalSeconds;
+
+        const updateUI = () => {
+          const value = String(remaining);
+          countdownEl.textContent = value;
+          countdownVisualEl.textContent = value;
+          const pct = (remaining / totalSeconds) * 100;
+          progressEl.style.width = `${pct}%`;
+        };
+
+        const redirectNow = () => {
+          window.location.href = redirectUrl;
+        };
+
+        nowButton.addEventListener('click', redirectNow);
+
+        updateUI();
+
+        const timerId = window.setInterval(() => {
+          remaining -= 1;
+          if (remaining <= 0) {
+            window.clearInterval(timerId);
+            redirectNow();
+            return;
+          }
+          updateUI();
+        }, 1000);
+      }
+    </script>
   </body>
 </html>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YTSV4PT9X"></script>
