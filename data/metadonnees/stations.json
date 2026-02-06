@@ -1802,8 +1802,8 @@
   {
     "id": "74085404",
     "nom": "Les Contamines Montjoie -S-",
-    "lon": 6.669,
-    "lat": 45.802833,
+    "lon": 6.687333,
+    "lat": 45.773667,
     "alt": 2272,
     "_scales": [
       "quotidienne"
@@ -2002,8 +2002,8 @@
   {
     "id": "74215400",
     "nom": "Praz-sur-Arly -S-",
-    "lon": 6.583667,
-    "lat": 45.801333,
+    "lon": 6.584,
+    "lat": 45.801833,
     "alt": 1950,
     "_scales": [
       "quotidienne"
